@@ -43,10 +43,6 @@ export default class Login extends Component {
                   <Form.Control type='password' placeholder='Password' name='password' value={this.state.password} onChange={this.onChange} />
                </Form.Group>
 
-               <Form.Group controlId='formBasicCheckbox' className='flex-start' style={{ marginLeft: "-180px" }}>
-                  <Form.Check type='checkbox' label='Check me out' />
-               </Form.Group>
-
                <Button variant='primary' type='submit' onClick={this.handleSubmit} className='btn-block' style={{ maxWidth: "300px" }}>
                   Submit
                </Button>

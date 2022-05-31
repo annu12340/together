@@ -20,7 +20,11 @@ const Icons = {
          clipRule='evenodd'
       />
    ),
-   logout: () => <path fillRule='evenodd' d='M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z' clipRule='evenodd' />,
+   logout: () => (
+      <>
+         <path fillRule='evenodd' d='M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z' clipRule='evenodd' />,
+      </>
+   ),
 };
 function SidebarItem({ text, index }) {
    return (
@@ -49,7 +53,7 @@ function SidebarLeft() {
          </ul>
          <div className='pb-5  px-4'>
             <hr className='mb-5 text-zinc-700' />
-            <a href='{key}' className='py-2 flex items-center  text-zinc-500'>
+            <a href='http://localhost:3000/logout' className='py-2 flex items-center  text-zinc-500'>
                <span className='bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md'>
                   <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5' viewBox='0 0 20 20' fill='currentColor'>
                      {Icons.logout()}
