@@ -11,6 +11,7 @@ import PetitionDetails from "./pages/DetailView/PetitionDetails";
 import ShareButtons from "./pages/ShareButton/ShareButtons";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Authentication/Login";
+import Register from "./pages/Authentication/Register";
 
 function App() {
    return (
@@ -27,6 +28,7 @@ function App() {
                   <Route path='/petitionreg' element={<Petitonreg />}></Route>
                </Route>
                <Route path='/login' element={<Login />}></Route>
+               <Route path='/Register' element={<Register />}></Route>
                <Route path='/share' element={<ShareButtons />}></Route>
             </Routes>
          </Router>
