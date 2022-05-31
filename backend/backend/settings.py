@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'account',
     'campaigns',
+    'petition',
 ]
 
 MIDDLEWARE = [

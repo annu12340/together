@@ -4,11 +4,12 @@ import axios from "axios";
 
 function Dashboard() {
    let [campaign, setcampaign] = useState([]);
+   let [petition, setpetition] = useState([]);
    let access_token = localStorage.getItem("token");
 
    useEffect(() => {
       getcampaign();
-      postcampaign();
+      getpetition();
    }, []);
 
    let getcampaign = async () => {
@@ -19,6 +20,18 @@ function Dashboard() {
       }
       console.log("data", response.data);
    };
+
+   let getpetition = async () => {
+      let response = await axios.get(`http://127.0.0.1:8000/petition/`, { headers: { Authorization: `Bearer ${access_token}` } });
+
+      if (response.status === 200) {
+         setpetition(response.data);
+      }
+      console.log("petition", response.data);
+   };
+
+   // POST DATA TO DATABASE
+
    let postcampaign = async () => {
       let body = {
          name: "postcampaign",
@@ -43,7 +56,11 @@ function Dashboard() {
       <div>
          <h1>Home</h1>
          {localStorage.getItem("user")}
+         petition
+         <h3>Campaign</h3>
          <ul> {campaign && campaign.map((data) => <li>{data.name}</li>)}</ul>
+         <h3>petition</h3>
+         <ul> {petition && petition.map((data) => <li>{data.name}</li>)}</ul>
          <button onClick={postcampaign}>Post campaign</button>
       </div>
    );
