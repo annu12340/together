@@ -1,111 +1,101 @@
 .indexedStep {
-  color: white;
-  
-  width: 45px;
-  height: 45px;
-  font-size: 12px;
-  background-color: rgba(211, 211, 211, 0.8);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   color: white;
+
+   width: 45px;
+   height: 45px;
+   font-size: 12px;
+   background-color: rgba(211, 211, 211, 0.8);
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .indexedStep.accomplished {
-  background-color: rgba(0, 116, 217, 1);
-
+   background-color: rgba(0, 116, 217, 1);
 }
 
-
 .main {
-  font-family: sans-serif;
-  text-align: center;
+   font-family: sans-serif;
+   text-align: center;
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height:60%;
-  font-size: 20px;
-  margin-left:28px;
-  
-  
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 60%;
+   font-size: 20px;
+   margin-left: 28px;
 }
-.header{
-  font-size: 38px;
-  color: white;
+.header {
+   font-size: 38px;
+   color: white;
 }
 
-.textFeild{
-  float: left;
-  padding-bottom: 16px;
-  padding-top: 28px;
-  color: white;
+.textFeild {
+   float: left;
+   padding-bottom: 16px;
+   padding-top: 28px;
+   color: white;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+.textstyle {
+   outline: none;
+   border: none;
+   background: none;
+   border-bottom: 1px solid #fff;
+   border-radius: 0px !important;
+}
 
-      input[type=number]::-webkit-inner-spin-button, 
-      input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
-      }
-     .textstyle {
-      outline: none;
-      border: none;
-      background: none;
-      border-bottom: 1px solid #fff;
-      border-radius: 0px !important;
+input:focus,
+input:hover {
+   border: none;
+   margin: 0 auto;
+   background: none;
+   box-shadow: none;
+   border-bottom: 1px solid #ddd;
+}
+form {
+   box-shadow: 1px 0 10px 15px rgba(0, 0, 0, 0.5);
+}
 
-      }
-
-
-      input:focus, input:hover {
-      border: none;
-      margin: 0 auto;
-      background: none;
-      box-shadow: none;
-      border-bottom: 1px solid #ddd;
-      }
-      form{
-      box-shadow: 1px 0 10px 15px rgba(0,0,0,.5);
-      }
- 
-      @media (min-width: 768px){
-      .w-40{
+@media (min-width: 768px) {
+   .w-40 {
       width: 30%;
-      }
-      }
-      @media (max-width: 768px){
-      .w-40{
+   }
+}
+@media (max-width: 768px) {
+   .w-40 {
       width: 80%;
-      }
-      }
-      .footerButton{
-        font-size: 28px;
-        padding-left: 16px;
-      }
-      .other{
-        color:black;
-      }
-      .white{
-        color: white;
-      }
-
-
-      .background{
-      background-image: url(https://th.bing.com/th/id/OIP.a7zcxkWpyz-ZV0e_dRu_WwHaEl?pid=ImgDet&w=1280&h=792&rs=1);
-      background-size: cover;
-      /* background-position: center; */
-      font-family: 'Raleway', sans-serif;
-      
-      }
-      ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+   }
 }
-.date{
-  padding-bottom: 96px;
+.footerButton {
+   font-size: 28px;
+   padding-left: 16px;
+}
+.other {
+   color: black;
+}
+.white {
+   color: white;
 }
 
-      
+.background {
+   background-image: url(https://th.bing.com/th/id/OIP.a7zcxkWpyz-ZV0e_dRu_WwHaEl?pid=ImgDet&w=1280&h=792&rs=1);
+   background-size: cover;
+   /* background-position: center; */
+   font-family: "Raleway", sans-serif;
+}
+::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
+.date {
+   padding-bottom: 96px;
+}

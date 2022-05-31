@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HistoryTab from "./pages/History/HistoryTab";
 import Details from "./pages/DetailView/Details";
 import CapmpaignForm from "./pages/Forms/CampaignForm";
-
 import Petitonreg from "./pages/Forms/Petitionreg";
 import PetitionDetails from "./pages/DetailView/PetitionDetails";
 import ShareButtons from "./pages/ShareButton/ShareButtons";
@@ -16,7 +15,6 @@ import Register from "./pages/Authentication/Register";
 function App() {
    return (
       <>
-         {/* <Home/> */}
          <Router>
             <Routes>
                <Route path='/' element={<Home />}>
