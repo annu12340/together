@@ -14,6 +14,7 @@ class Petition(models.Model):
     )
 
     name = models.CharField(max_length=40)
+    images = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
     status = models.CharField(
         max_length=25, choices=STATUS, default=STATUS[0][0])

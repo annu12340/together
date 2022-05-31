@@ -49,7 +49,7 @@ function IndividualItem() {
                            </div>
                            <div className='w-1/2 p-3'>
                               <h3 className='font-semibold'>Ending in</h3>
-                              {/* <Countdown date={Date.now() + data.end_date} renderer={({ hours, minutes, seconds }) => <div className=''>{`${hours}h: ${minutes}m: ${seconds}s`}</div>} /> */}
+                              <Countdown date={Date.now() + parseInt((new Date(data.end_date).getTime() / 1000).toFixed(0)) } renderer={({ hours, minutes, seconds }) => <div className=''>{`${hours}h: ${minutes}m: ${seconds}s`}</div>} />
                            </div>
                         </div>
                      </div>

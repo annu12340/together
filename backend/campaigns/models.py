@@ -19,6 +19,7 @@ class Campaign(models.Model):
     )
 
     name = models.CharField(max_length=100)
+    # images = models.CharField(max_length=300)
     description = models.CharField(max_length=300)
     type = models.CharField(
         max_length=25, choices=TYPE, default=TYPE[0][0])
