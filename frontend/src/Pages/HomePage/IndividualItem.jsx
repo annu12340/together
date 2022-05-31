@@ -41,7 +41,7 @@ function IndividualItem() {
             {campaign.map((data) => (
                <li className='w-full lg:w-1/2 xl:w-1/3  p-3 ' key={data.id}>
                   <a className='block bg-zinc-800 rounded-md w-full overflow-hidden pb-4 shadow-lg' href='/item'>
-                     <div className='w-full h-64 bg-center bg-cover relative' style={{ backgroundImage: `url(https://images.unsplash.com/photo-1653923118858-ed9c9fca2efc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80)` }}>
+                     <div className='w-full h-64 bg-center bg-cover relative' style={{ backgroundImage: `url(${data.images})` }}>
                         <div className='absolute left-1/2 -translate-x-1/2 bottom-2  w-5/6 bg-white rounded-md flex items-center bg-opacity-30 backdrop-blur-md'>
                            <div className='w-1/2 p-3'>
                               <h3 className='font-semibold'>Current Amound</h3>
@@ -49,7 +49,7 @@ function IndividualItem() {
                            </div>
                            <div className='w-1/2 p-3'>
                               <h3 className='font-semibold'>Ending in</h3>
-                              <Countdown date={Date.now() + parseInt((new Date(data.end_date).getTime() / 1000).toFixed(0)) } renderer={({ hours, minutes, seconds }) => <div className=''>{`${hours}h: ${minutes}m: ${seconds}s`}</div>} />
+                              <Countdown date={Date.now() + parseInt((new Date(data.end_date).getTime() / 1000).toFixed(0))} renderer={({ hours, minutes, seconds }) => <div className=''>{`${hours}h: ${minutes}m: ${seconds}s`}</div>} />
                            </div>
                         </div>
                      </div>

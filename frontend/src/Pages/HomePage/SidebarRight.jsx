@@ -8,9 +8,9 @@ const SidebarRight = () => {
 
    useEffect(() => {
       set_access_token();
-
       getpetition();
    }, []);
+
    let getpetition = async () => {
       let response = await axios.get(`http://127.0.0.1:8000/petition/`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
 
@@ -26,7 +26,7 @@ const SidebarRight = () => {
             <ul className='mt-3 space-y-3'>
                {petition.map((data) => (
                   <li className='bg-zinc-800 rounded-md p-2 flex shadow-lg'>
-                     <img src='https://images.unsplash.com/photo-1653986459460-4f71f570425c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80' className='w-24 h-24 rounded-md' />
+                     <img src={data.images} className='w-24 h-24 rounded-md' />
                      <div className='ml-3'>
                         <h3 className='font-semibold  text-white'>{data.name}</h3>
                         <p className='text-sm pb-4 text-zinc-400'>Needs {data.target_signature_counter}</p>

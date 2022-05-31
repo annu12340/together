@@ -6,8 +6,7 @@ class PetitionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Petition
-        fields = ['name', 'description', 'status',
-                  'start_at', 'end_date', 'target_signature_counter', 'contact_info']
+        fields = '__all__'
 
 
 class PetitionStatusUpdateSerializer(serializers.ModelSerializer):
