@@ -19,7 +19,6 @@ function App() {
          <Router>
             <Routes>
                <Route path='/' element={<Home />}>
-                  <Route path='/login' element={<Login />}></Route>
                   <Route path='/dashboard' element={<Dashboard />}></Route>
                   <Route path='/history' element={<HistoryTab />}></Route>
                   <Route path='/item' element={<Details />}></Route>
@@ -27,7 +26,7 @@ function App() {
                   <Route path='/campaignForm' element={<CapmpaignForm />}></Route>
                   <Route path='/petitionreg' element={<Petitonreg />}></Route>
                </Route>
-
+               <Route path='/login' element={<Login />}></Route>
                <Route path='/share' element={<ShareButtons />}></Route>
             </Routes>
          </Router>

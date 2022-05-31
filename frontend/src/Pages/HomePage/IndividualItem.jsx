@@ -6,12 +6,10 @@ import { set_access_token } from "./../utils/accessToken";
 
 function IndividualItem() {
    let [campaign, setcampaign] = useState([]);
-   let [petition, setpetition] = useState([]);
 
    useEffect(() => {
       set_access_token();
       getcampaign();
-      getpetition();
    }, []);
 
    let getcampaign = async () => {
@@ -25,20 +23,11 @@ function IndividualItem() {
       console.log("data", response.data);
    };
 
-   let getpetition = async () => {
-      let response = await axios.get(`http://127.0.0.1:8000/petition/`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
-
-      if (response.status === 200) {
-         setpetition(response.data);
-      }
-      console.log("petition", response.data);
-   };
-
    return (
       <>
          <div className='flex flex-col md:flex-row justify-between px-3 mt-3'>
             <h2 className='text-xl text-white font-semibold'>Recent</h2>
-
+            {localStorage.getItem("user")}
             <ull className='inline-flex space-x-3 '>
                {["StartUp", "Medical", "Disaster", "Sport"].map((text, index) => (
                   <li className=''>
