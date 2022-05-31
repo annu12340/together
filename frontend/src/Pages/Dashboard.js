@@ -57,9 +57,9 @@ function Dashboard() {
          <h1>Home</h1>
          {localStorage.getItem("user")}
          petition
-         <h3>Campaign</h3>
+         <h2>Campaign</h2>
          <ul> {campaign && campaign.map((data) => <li>{data.name}</li>)}</ul>
-         <h3>petition</h3>
+         <h2>petition</h2>
          <ul> {petition && petition.map((data) => <li>{data.name}</li>)}</ul>
          <button onClick={postcampaign}>Post campaign</button>
       </div>
