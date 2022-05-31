@@ -1,25 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
+
 function Dashboard() {
    let [campaign, setcampaign] = useState([]);
-   let access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUzOTgxNzQ0LCJpYXQiOjE2NTM5ODE0NDQsImp0aSI6ImQ1NTZjY2VmZGRlNjQxYTk4NzdjYWZhYmIxY2U3ZGE5IiwidXNlcl9pZCI6MX0.jymUA8aluPQyJfrw8UWTp6-5iMkdc5SQYC841UfHaTA";
+   let access_token = localStorage.getItem("token");
+
    useEffect(() => {
       getcampaign();
+      postcampaign();
    }, []);
 
    let getcampaign = async () => {
-      console.log("getcampaign");
-      let response = await fetch("http://127.0.0.1:8000/campaigns/", {
-         method: "get",
-         headers: new Headers({
-            Authorization: `Bearer ${access_token}`,
-         }),
-      });
-      let data = await response.json();
-      console.log("data", data);
-      setcampaign(data);
-      console.log("getcampaign342");
+      let response = await axios.get(`http://127.0.0.1:8000/campaigns/`, { headers: { Authorization: `Bearer ${access_token}` } });
+
+      if (response.status === 200) {
+         setcampaign(response.data);
+      }
+      console.log("data", response.data);
    };
+   let postcampaign = async () => {
+      let body = {
+         name: "postcampaign",
+         description: "string",
+         type: "NGO",
+         status: "PENDING",
+         start_date: "2022-05-31T08:21:59.451Z",
+         end_date: "2022-05-31T08:21:59.451Z",
+         target_amount: 23,
+         contact_info: "string",
+         organiser_id: 1,
+      };
+      let response = await axios.post("http://127.0.0.1:8000/campaigns/", body, { headers: { Authorization: `Bearer ${access_token}` } });
+
+      console.log("data", response.data);
+   };
+
    if (!localStorage.getItem("token")) {
       return <Redirect to='login' />;
    }
@@ -27,12 +43,8 @@ function Dashboard() {
       <div>
          <h1>Home</h1>
          {localStorage.getItem("user")}
-         <ul>
-            {" "}
-            {campaign.map((data) => (
-               <li>{data.name}</li>
-            ))}
-         </ul>
+         <ul> {campaign && campaign.map((data) => <li>{data.name}</li>)}</ul>
+         <button onClick={postcampaign}>Post campaign</button>
       </div>
    );
 }

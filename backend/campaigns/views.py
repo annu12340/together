@@ -24,11 +24,11 @@ class CampaignView(generics.GenericAPIView):
 
     def post(self, request):
         data = request.data
-
+        print("data, ", data)
         serializer = self.serializer_class(data=data)
 
         if serializer.is_valid():
-            serializer.save(organiser_id=request.user)
+            serializer.save(organiser_id=request.user.id)
 
             print(f"\n {serializer.data}")
 
