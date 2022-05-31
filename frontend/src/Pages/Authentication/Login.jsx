@@ -19,12 +19,12 @@ export default class Login extends Component {
             username: this.state.email,
             password: this.state.password,
          })
-         .then(function (res) {
+         .then(function(res) {
             console.log(res);
             localStorage.setItem("refresh_token", res.data.refresh);
             localStorage.setItem("user", res.config.data);
          })
-         .catch(function (err) {
+         .catch(function(err) {
             console.log(err);
          });
       event.preventDefault();
