@@ -39,7 +39,7 @@ const Details = () => {
                      <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
                   </div>
                   <div className='flex items-center space-x-6 mt-4'>
-                     {/* <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button> */}
+                     <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button>
                      <span>
                         <ShareButtons url='https://twitter.com/LBank_Exchange/status/1531857343973048326' />
                      </span>
