@@ -29,7 +29,6 @@ const Icons = {
 function SidebarItem({ text, index }) {
    return (
       <li className='relative'>
-         {console.log(text)}
          {index === 0 ? <div className='absolute -left-1 top-0 bg-fuchsia-600 w-2 h-8 rounded-full' /> : null}
          <a href={"http://localhost:3000/" + text} className={`pl-4 flex items-center capitalize   ${index === 0 ? "text-white" : "text-zinc-500"}`}>
             <span className={`bg-zinc-800 w-8 h-8 grid place-items-center mr-2 rounded-md ${index === 0 ? "bg-fuchsia-600" : "bg-zinc-800"}`}>

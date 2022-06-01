@@ -1,28 +1,62 @@
-import React from "react";
 import Payment from "./Payment";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { set_access_token } from "./../utils/accessToken";
+
+const sampleJSON = {
+   string: "PluralSight",
+   number: 1,
+};
 
 const Details = () => {
+   const params = useParams();
+   let [detailedview, setdetailedview] = useState([]);
+
+   useEffect(() => {
+      set_access_token();
+      getdetailedview();
+   }, []);
+
+   let getdetailedview = async () => {
+      let response = await axios.get(`http://127.0.0.1:8000/campaigns/${params.id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
+
+      if (response.status === 200) {
+         setdetailedview([response.data]);
+         console.log("data", detailedview);
+      }
+   };
+
    return (
       <>
-         <div className=' h-96 bg-cover flex flex-wrap' style={{ backgroundImage: "url(https://kettocdn.gumlet.io/media/campaign/475000/475235/image/62fbb9d5cef3675c4beddbd82c96f8ac4743524b.jpg?dpr=1.0&q=70&w=1140)" }}>
-            <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>No one has ever become poor by giving</h2>
-         </div>
-         <div className='flex items-center space-x-6 mt-4'>
-            <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button>
-            <button className=' w-96 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Share</button>
-         </div>
-         <div className='hidden md:flex items-center space-x-1'>
-            <a href='' className='py-4 px-2 text-xl text-gray-500 hover:text-green-500  border-b-4 border-green-500 font-semibold '>
-               Story
-            </a>
-            <a href='#documents' className='py-4 px-2 text-xl text-gray-500 font-semibold hover:text-green-500 '>
-               Documents
-            </a>
-         </div>
          <div>
-            <p className='text-center text-[#daded9] p-16 text-3xl'>She comes from a family of very limited means, but as a very vivacious young girl, she always looked for something to be grateful for. Her parents wanted her to have an education and live a better life than them.</p>
+            {" "}
+            {detailedview.map((data) => (
+               <div style={{ width: "40%" }}>
+                  <div className='h-96 bg-cover flex flex-wrap' style={{ backgroundImage: `url(${data.images})` }}>
+                     <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
+                  </div>
+                  <div className='flex items-center space-x-6 mt-4'>
+                     <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button>
+                     <button className=' w-96 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Share</button>
+                  </div>
+                  <div className='hidden md:flex items-center space-x-1'>
+                     <a href='' className='py-4 px-2 text-xl text-gray-500 hover:text-green-500  border-b-4 border-green-500 font-semibold '>
+                        Story
+                     </a>
+                     <a href='#documents' className='py-4 px-2 text-xl text-gray-500 font-semibold hover:text-green-500 '>
+                        Documents
+                     </a>
+                  </div>
+                  <div>
+                     <p className='text-center text-[#daded9] p-16 text-3xl' style={{ overflowWrap: "break-word" }}>
+                        {data.description}
+                     </p>
+                  </div>
+                  <Payment />
+               </div>
+            ))}
          </div>
-         <Payment />
       </>
    );
 };

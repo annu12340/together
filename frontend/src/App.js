@@ -21,7 +21,7 @@ function App() {
                <Route path='/' element={<Home />}>
                   <Route path='/dashboard' element={<Dashboard />}></Route>
                   <Route path='/history' element={<HistoryTab />}></Route>
-                  <Route path='/item' element={<Details />}></Route>
+                  <Route path='/campaign/:id' element={<Details />}></Route>
                   <Route path='petition' element={<PetitionDetails />}></Route>
                   <Route path='/campaignForm' element={<CapmpaignForm />}></Route>
                   <Route path='/petitionreg' element={<Petitonreg />}></Route>
