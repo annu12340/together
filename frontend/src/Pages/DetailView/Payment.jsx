@@ -32,9 +32,9 @@ export default function Payment() {
 
    return (
       <form className='m-4' onSubmit={handleSubmit}>
-         <div className='credit-card w-full lg:w-1/2 sm:w-auto shadow-lg mx-auto rounded-xl bg-grey'>
+         <div className='credit-card w-full lg:w-1/2 sm:w-auto  mx-auto rounded-xl bg-grey'>
             <main className='mt-4 p-4'>
-               <h1 className='text-xl font-semibold text-gray-700 text-center'>Send ETH payment</h1>
+               <h1 className='text-xl font-semibold text-gray-100 text-center'>Send ETH payment</h1>
                <div className=''>
                   <div className='my-3'>
                      <input type='text' name='addr' className='input input-bordered block w-full focus:ring focus:outline-none' placeholder='Recipient Address' />

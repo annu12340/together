@@ -63,7 +63,7 @@ input:hover {
    border-bottom: 1px solid #ddd;
 }
 form {
-   box-shadow: 1px 0 10px 15px rgba(0, 0, 0, 0.5);
+   box-shadow: 1px 0 5px 4px rgba(35, 35, 35, 0.668);
 }
 
 @media (min-width: 768px) {

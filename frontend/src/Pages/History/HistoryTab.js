@@ -54,7 +54,7 @@ const HistoryTab = () => {
             <div className='p-5'>
                <div className=' w-full lg:max-w-full lg:flex'>
                   <div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden' style={{ backgroundImage: `url(/images/image1.jpg)` }} title='Mountain'></div>
-                  <div style={{ width: "25vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div style={{ width: "20vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='text-white font-bold text-xl mb-2'>Campaign</div>
                         <p className='text-white text-base'>Without Rs 26.5 Lakhs, I Might Lose My 2-Year-Old Child</p>
@@ -77,7 +77,7 @@ const HistoryTab = () => {
             <div className='p-5'>
                <div className=' w-full lg:max-w-full lg:flex'>
                   <div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden' style={{ backgroundImage: `url(/images/image2.jpg)` }} title='Mountain'></div>
-                  <div style={{ width: "25vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div style={{ width: "20vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='text-white font-bold text-xl mb-2'>Campaign</div>
                         <p className='text-white text-base'>I lost my husband,don’t let me lose my daughter too.</p>

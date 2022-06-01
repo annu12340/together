@@ -1,6 +1,7 @@
 import Payment from "./Payment";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ShareButtons from "../ShareButton/ShareButtons";
 import axios from "axios";
 import { set_access_token } from "./../utils/accessToken";
 
@@ -32,13 +33,16 @@ const Details = () => {
          <div>
             {" "}
             {detailedview.map((data) => (
-               <div style={{ width: "40%" }}>
+               <div style={{ width: "80%" }}>
                   <div className='h-96 bg-cover flex flex-wrap' style={{ backgroundImage: `url(${data.images})` }}>
+                     <br />
                      <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
                   </div>
                   <div className='flex items-center space-x-6 mt-4'>
-                     <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button>
-                     <button className=' w-96 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>Share</button>
+                     {/* <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Donate</button> */}
+                     <span>
+                        <ShareButtons url='https://twitter.com/LBank_Exchange/status/1531857343973048326' />
+                     </span>
                   </div>
                   <div className='hidden md:flex items-center space-x-1'>
                      <a href='' className='py-4 px-2 text-xl text-gray-500 hover:text-green-500  border-b-4 border-green-500 font-semibold '>
@@ -49,7 +53,7 @@ const Details = () => {
                      </a>
                   </div>
                   <div>
-                     <p className='text-center text-[#daded9] p-16 text-3xl' style={{ overflowWrap: "break-word" }}>
+                     <p className='text-center text-[#daded9] p-16 text-1xl' style={{ overflowWrap: "break-word" }}>
                         {data.description}
                      </p>
                   </div>
