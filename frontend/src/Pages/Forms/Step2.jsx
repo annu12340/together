@@ -30,9 +30,9 @@ const Step2 = props => {
           value={props.contactinfo} 
           onChange={props.handleChange} 
           />
-      <Label className= " textFeild white float-left pt-12 pb-12">Target Amount</Label>
+      <Label className= " textFeild white float-left pt-12 pb-12">Target {props.target}</Label>
       
-        <Input type="text" name="targetamount" placeholder="Enter your target info" className="outline-none py-2 white pr-4 block w-full textstyle"
+        <Input type="text" name="targetamount" placeholder="Enter your target" className="outline-none py-2 white pr-4 block w-full textstyle"
           value={props.targetamount} 
           onChange={props.handleChange} 
           />

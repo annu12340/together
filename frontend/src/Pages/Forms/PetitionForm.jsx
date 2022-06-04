@@ -1,4 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import "./MultiStepProgressBar.css";
+import  { Component } from "react";
 import {
   Form,
   Button,
@@ -15,9 +18,8 @@ import Step2 from "./Step2";
 import Step3 from "./Step3";
 
 import MultiStepProgressBar from "./MultiStepProgressBar";
-import "./MultiStepProgressBar.css";
 
-class MasterForm extends Component {
+class  CampaignForm extends Component {
   constructor(props) {
     super(props);
 
@@ -132,19 +134,26 @@ class MasterForm extends Component {
     return null;
   }
 
-  render() {
-    return (
-      <>
-       <div className=" wh pt-28 pl-20">
+
+
+ render() {
+  return (
+    
+      <div className="main">
+      <Container>
+        <Row>
+          <Col>
+                 <div className=" wh pt-28 pl-20">
         <Form onSubmit={this.handleSubmit}>
           <Card >
-            <CardHeader className="header">Create your Campaign</CardHeader>
+            <CardHeader className="header">Create your Petition</CardHeader>
             <CardBody className="  pl-16 pr-16 pb-16">
               <CardTitle>
                 <MultiStepProgressBar currentStep={this.state.currentStep} />
               </CardTitle>
               <CardText />
               <Step1
+              name="Petition"
                 currentStep={this.state.currentStep}
                 handleChange={this.handleChange}
                 campaignname={this.state.campaignname}
@@ -152,6 +161,8 @@ class MasterForm extends Component {
                 type={this.state.type}
               />
               <Step2
+              name="Petition"
+              target="Count"
                 currentStep={this.state.currentStep}
                 handleChange={this.handleChange}
                 startdate={this.state.startdate}
@@ -173,9 +184,12 @@ class MasterForm extends Component {
           </Card>
         </Form>
         </div>
-      </>
-    );
-  }
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  )
+ }
 }
 
-export default MasterForm;
+export default CampaignForm

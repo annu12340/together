@@ -7,15 +7,20 @@ const Step1 = props => {
     return null;
   }
 
+ 
+  
+
   // const { errors } = useForm();
+
+
 
   return (
      <>
     
       <FormGroup>
-        <Label className="textFeild">Campaign Name</Label>
+        <Label className="textFeild">{props.name} Name</Label>
        
-        <Input type="text" name=" campaignname" placeholder="Enter your campaign name" className="outline-none py-2 pr-4 white block w-full textstyle"
+        <Input type="text" name=" campaignname" placeholder="Enter name" className="outline-none py-2 pr-4 white block w-full textstyle"
           required
           // value={props.campaignname}
           // onChange={props.handleChange} 
@@ -23,7 +28,7 @@ const Step1 = props => {
  
       
           <Label className="textFeild">Description</Label>
-        <textarea name="discription" cols={40} rows={5} placeholder="Enter your Campaign details " className="outline-none white py-2 pr-4  block w-full textstyle"
+        <textarea name="discription" cols={40} rows={5} placeholder="Enter details " className="outline-none white py-2 pr-4  block w-full textstyle"
           required
           value={props.discription} 
           onChange={props.handleChange}
