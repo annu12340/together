@@ -12,6 +12,8 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Authentication/Login";
 import Register from "./pages/Authentication/Register";
 import Logout from "./pages/Authentication/Logout";
+import Timeline from './pages/History/Timeline'
+import Popup from "./pages/DetailView/Popup";
 
 function App() {
    return (
@@ -22,14 +24,14 @@ function App() {
                   <Route path='/dashboard' element={<Dashboard />}></Route>
                   <Route path='/history' element={<HistoryTab />}></Route>
                   <Route path='/campaign/:id' element={<Details />}></Route>
-                  <Route path='petition' element={<PetitionDetails />}></Route>
-                  <Route path='/campaignForm' element={<CapmpaignForm />}></Route>
-                  <Route path='/petitionreg' element={<Petitonreg />}></Route>
+                  <Route path='/petition/:id' element={<PetitionDetails />}></Route>
+                  <Route path='/campaignregistration' element={<CapmpaignForm />}></Route>
+                  <Route path='/petitionregistration' element={<Petitonreg />}></Route>
                </Route>
                <Route path='/login' element={<Login />}></Route>
                <Route path='/logout' element={<Logout />}></Route>
                <Route path='/register' element={<Register />}></Route>
-               <Route path='/share' element={<ShareButtons />}></Route>
+               <Route path='/test' element={<Popup/>}></Route>
             </Routes>
          </Router>
       </>

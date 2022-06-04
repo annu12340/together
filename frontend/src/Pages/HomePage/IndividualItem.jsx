@@ -61,18 +61,12 @@ function IndividualItem() {
                            <img src='https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg' className='w-10 h-10 rounded-full' alt='item-owner' />
                            <span className=' ml-2 text-zinc-400'>{data.type}</span>
                         </div>
-                        <div className='flex mt-2'>
-                           <div className='p-3 w-1/2'>
-                              <button className='bg-gradient-to-tr from-fuchsia-600 to-violet-600  w-full h-12 rounded-md font-semibold' href=''>
-                                 Donate
-                              </button>
-                           </div>
-                           <div className='p-3 w-1/2'>
-                              <button className='bg-gradient-to-tr from-fuchsia-600 to-violet-600  w-full rounded-md font-semibold h-12 p-px'>
-                                 <div className='bg-zinc-800 w-full h-full rounded-md grid place-items-center'>Share</div>
-                              </button>
-                           </div>
-                        </div>
+                           
+                                 <div class="mb-1 text-base text-white"><pre><strong>579,131</strong>EUR raised          58%</pre></div>
+<div class="  w-65 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+  <div class="bg-gradient-to-tr from-fuchsia-600 to-violet-600    h-2.5 rounded-full dark:bg-gray-300" style={{width:"6rem"}}></div>
+</div>
+                        
                      </Link>
                   </li>
                </>

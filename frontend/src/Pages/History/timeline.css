@@ -1,0 +1,260 @@
+:root {
+  /* 3c368a */
+  --dashboard: #4b44ad;
+  /* --main:#3C0C97; */
+}
+
+/* Dashboard homepage */
+.dashboard {
+  background: #fafafa;
+}
+.white-bk {
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  margin: 2%;
+  margin-top: 10%;
+  padding: 5%;
+  border-radius: 25px;
+  box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.06);
+}
+.dashboard-row {
+  margin-left: 10px;
+}
+
+.dashboard-heading {
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+}
+.ibeto-heading {
+  font-size: 32px;
+}
+/*--------------------------- LEFT SECTION: dashboard-timeline --------------------------- */
+.dashboard-timeline-row {
+  width: 75%;
+}
+.dashboard-timeline {
+  line-height: 1.9em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #768390;
+  font-size: 13px;
+}
+.dashboard-timeline-title {
+  color: #3d4351;
+  margin-top: 0;
+  font-size: 15px;
+}
+
+/*----- dashboard-timeline ITEM -----*/
+.dashboard-timeline-item {
+  position: relative;
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+}
+.dashboard-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/*----- dashboard-timeline INFO -----*/
+.dashboard-timeline-info {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 0 0 0.5em 0;
+  white-space: nowrap;
+}
+
+/*----- dashboard-timeline MARKER -----*/
+.dashboard-timeline-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+}
+.dashboard-timeline-marker:before {
+  background: #622eb4;
+  border: 3px solid transparent;
+  border-radius: 100%;
+  content: "";
+  display: block;
+  height: 15px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 15px;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.dashboard-timeline-marker:after {
+  content: "";
+  width: 3px;
+  background: #ccd5db;
+  display: block;
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 6px;
+}
+.dashboard-timeline-item:last-child .dashboard-timeline-marker:after {
+  content: none;
+}
+
+.dashboard-timeline-item:not(.period):hover .dashboard-timeline-marker:before {
+  background: transparent;
+  border: 3px solid #622eb4;
+}
+
+/*----- dashboard-timeline CONTENT -----*/
+.dashboard-timeline-content {
+  padding-bottom: 20px;
+}
+.dashboard-timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------- CENTRAL SECTION: dashboard-timeline --------------------------- */
+.central-section {
+  transform: translateX(-15%);
+}
+
+/* Current phase */
+.submissionForm-row,
+.currentphase-row {
+  padding: 4%;
+  width: 120%;
+}
+h1.ss-form-title {
+  display: none;
+}
+.currentphase-row {
+  font-size: 16px;
+}
+.currentphase-text {
+  text-align: center;
+}
+
+.currentphase-text p {
+  font-size: 17px;
+}
+.dashboard-phase-btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 13px;
+  text-decoration: None !important;
+  background-image: linear-gradient(90deg, #7819bb, #4b44ad);
+  color: #fff;
+  border: 0px solid #fff;
+  outline: none;
+  transition: color 0.5s;
+  border-radius: 10px;
+  padding: 8% 7% 8% 7%;
+  text-align: center;
+  width: 90%;
+  cursor: pointer;
+  margin-top: 10%;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 1s;
+}
+
+.dashboard-phase-btn:hover {
+  color: #4b44ad;
+  background: white;
+  border: 1px solid #4b44ad;
+}
+iframe {
+  width: 450px;
+}
+
+/* dashboard-logo */
+.dashboard-logo {
+  width: 10vw;
+  height: 10vh;
+}
+
+/*--------------------------- Right SECTION:  --------------------------- */
+/* Contact us */
+.contactUs-row {
+  width: 75%;
+  height: 7%;
+  margin-left: 15%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-image: linear-gradient(to right, #7819bb, #4b44ad);
+}
+.contactUs-row:hover {
+  background-image: linear-gradient(to right, #5951cc, #712fa0);
+}
+.sendmailbtn,
+.sendmailbtn :hover {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+.contactUs-text {
+  font-size: 18px;
+  line-height: 0.4;
+  font-weight: 200px;
+  color: rgb(221, 218, 224);
+}
+
+/* FAQ */
+.faq-row {
+  width: 75%;
+  margin-left: 15%;
+}
+
+.faq .faq-card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #cee1f8;
+}
+
+.faq .faq-card .faq-card-header {
+  padding: 0px;
+  border: none;
+  background: none;
+  transition: all 0.3s ease 0s;
+}
+
+.faq .faq-card .faq-card-header:hover {
+  background: rgba(74, 30, 233, 0.1);
+  padding-left: 10px;
+}
+.faq .faq-card .faq-card-header .faq-title {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: 400;
+  font-size: 15px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .faq-card .faq-card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  text-align: center;
+  background: #622eb4;
+  color: #fff;
+  font-size: 10px;
+  padding-top: 5px;
+  margin-right: 13px;
+}
+
+.faq .faq-card .faq-card-body p {
+  color: #3d4351;
+  font-size: 14px;
+  margin-bottom: 30px;
+}

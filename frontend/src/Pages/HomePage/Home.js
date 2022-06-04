@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import AboutUsHeader from "./AboutUsHeader";
-import SidebarLeft from "./SidebarLeft";
+import SidebarLeft from "./Sidebar";
 import { Outlet } from "react-router-dom";
 
 import "./homepage.css";

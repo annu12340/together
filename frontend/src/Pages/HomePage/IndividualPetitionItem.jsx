@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { set_access_token } from "./../utils/accessToken";
+import { set_access_token } from "../utils/accessToken";
 
 const SidebarRight = () => {
    let [petition, setpetition] = useState([]);
@@ -29,11 +29,13 @@ const SidebarRight = () => {
                      <img src={data.images} className='w-24 h-24 rounded-md' />
                      <div className='ml-3'>
                         <h3 className='font-semibold  text-white'>{data.name}</h3>
+                       
                         <p className='text-sm pb-4 text-zinc-400'>Needs {data.target_signature_counter}</p>
-
-                        <a href='/petition' className=' btn  w-24 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>
+                          <Link to={`/petition/${data.id}`}>
+                        <a className=' btn  w-24 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>
                            Sign
                         </a>
+                        </Link> 
                      </div>
                   </li>
                ))}

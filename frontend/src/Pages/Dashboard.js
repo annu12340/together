@@ -1,6 +1,6 @@
 import React from "react";
 import IndividualItem from "./HomePage/IndividualItem";
-import SidebarRight from "./HomePage/SidebarRight";
+import IndividualPetitionItem from "./HomePage/IndividualPetitionItem";
 
 const Dashboard = () => {
    return (
@@ -8,7 +8,7 @@ const Dashboard = () => {
          <div className=' grow '>
             <IndividualItem />
          </div>
-         <SidebarRight />
+         <IndividualPetitionItem />
       </div>
    );
 };
