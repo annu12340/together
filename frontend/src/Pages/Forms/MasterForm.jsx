@@ -135,11 +135,11 @@ class MasterForm extends Component {
   render() {
     return (
       <>
-       <div className="pt-4 mt-16">
+       <div className=" wh pt-28 pl-20">
         <Form onSubmit={this.handleSubmit}>
-          <Card>
+          <Card >
             <CardHeader className="header">Create your Campaign</CardHeader>
-            <CardBody className="pl-16 pr-16 pb-16">
+            <CardBody className="  pl-16 pr-16 pb-16">
               <CardTitle>
                 <MultiStepProgressBar currentStep={this.state.currentStep} />
               </CardTitle>

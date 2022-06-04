@@ -6,10 +6,10 @@
 
 /* Dashboard homepage */
 .dashboard {
-  background: #3b3838;
+  background: #fafafa;
 }
 .white-bk {
-  background-color: #fff;
+  background-color: rgb(43, 41, 41);
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   margin: 2%;
   margin-top: 10%;
@@ -30,7 +30,9 @@
 }
 /*--------------------------- LEFT SECTION: dashboard-timeline --------------------------- */
 .dashboard-timeline-row {
-  width: 75%;
+  width: 30%;
+  float: right;
+
 }
 .dashboard-timeline {
   line-height: 1.9em;
@@ -42,7 +44,7 @@
   font-size: 13px;
 }
 .dashboard-timeline-title {
-  color: #3d4351;
+  color: #e6e8ec;
   margin-top: 0;
   font-size: 15px;
 }
@@ -222,7 +224,7 @@ iframe {
 }
 
 .faq .faq-card .faq-card-header:hover {
-  background: rgba(74, 30, 233, 0.1);
+  background: rgba(234, 234, 241, 0.1);
   padding-left: 10px;
 }
 .faq .faq-card .faq-card-header .faq-title {

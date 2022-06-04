@@ -1,5 +1,5 @@
 import React from "react";
-// import "./MultiStepProgressBar.css";
+import "./MultiStepProgressBar.css";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 
@@ -17,7 +17,7 @@ const MultiStepProgressBar = props => {
   }
 
   return (
-   <div class="pt-16">
+   <div class="pt-28">
     <ProgressBar percent={stepPercentage}>
       <Step>
         {({ accomplished, index }) => (
