@@ -16,7 +16,7 @@ class CampaignView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        campaigns = Campaign.objects.all()
+        campaigns = Campaign.objects.all().order_by('-likes')
 
         serializer = self.serializer_class(instance=campaigns, many=True)
 
@@ -117,6 +117,7 @@ class UserCampaignDetailView(generics.GenericAPIView):
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
+
 class FilterView(generics.GenericAPIView):
     serializer_class = serializers.CampaignSerializer
     permission_classes = [IsAuthenticated]
@@ -130,3 +131,32 @@ class FilterView(generics.GenericAPIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
+class FilterView(generics.GenericAPIView):
+    serializer_class = serializers.CampaignSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, type):
+
+        campaign = Campaign.objects.all().filter(type=type)
+
+        serializer = self.serializer_class(instance=campaign)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+class UpdateCampaignLikesView(generics.GenericAPIView):
+
+    serializer_class = serializers.CampaignLikesUpdateSerializer
+
+    def put(self, request, campaign_id):
+        campaign = get_object_or_404(Campaign, pk=campaign_id)
+
+        serializer = self.serializer_class(
+            instance=campaign, data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+            return Response(status=status.HTTP_200_OK, data=serializer.data)
+
+        return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)
