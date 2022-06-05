@@ -116,3 +116,17 @@ class UserCampaignDetailView(generics.GenericAPIView):
         serializer = self.serializer_class(instance=campaign)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+class FilterView(generics.GenericAPIView):
+    serializer_class = serializers.CampaignSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, type):
+
+        campaign = Campaign.objects.all().filter(type=type)
+
+        serializer = self.serializer_class(instance=campaign)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+

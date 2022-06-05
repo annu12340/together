@@ -8,8 +8,6 @@ urlpatterns = [
          name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(),
          name='token_refresh'),
-    path('account/', include('account.urls'),
-         name='generate_otp'),
     path('account/', include('account.urls')),
     path('campaigns/', include('campaigns.urls')),
     path('petition/', include('petition.urls')),

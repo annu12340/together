@@ -21,6 +21,13 @@ function IndividualItem() {
       }
       console.log("data", response.data);
    };
+   let filterBtn = async () => {
+      let result = await axios.get(`http://127.0.0.1:8000/campaigns/filter/NGO`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
+
+      if (result.status === 200) {
+         console.log("data", result.data);
+      }
+   };
 
    return (
       <>
@@ -30,7 +37,9 @@ function IndividualItem() {
             <div className='inline-flex space-x-3 '>
                {["StartUp", "Medical", "Disaster", "Sport"].map((text, index) => (
                   <div className=''>
-                     <button className={` ${index ? "text-zinc-500" : "text-fuchsia-600 underline font-bold"}`}>{text}</button>
+                     <button onClick={filterBtn} className={` ${index ? "text-zinc-500" : "text-fuchsia-600 underline font-bold"}`}>
+                        {text}
+                     </button>
                   </div>
                ))}
                ;
@@ -61,12 +70,15 @@ function IndividualItem() {
                            <img src='https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg' className='w-10 h-10 rounded-full' alt='item-owner' />
                            <span className=' ml-2 text-zinc-400'>{data.type}</span>
                         </div>
-                           
-                                 <div class="mb-1 text-base text-white"><pre><strong>579,131</strong>EUR raised          58%</pre></div>
-<div class="  w-65 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-  <div class="bg-gradient-to-tr from-fuchsia-600 to-violet-600    h-2.5 rounded-full dark:bg-gray-300" style={{width:"6rem"}}></div>
-</div>
-                        
+
+                        <div class='mb-1 text-base text-white'>
+                           <pre>
+                              <strong>579,131</strong>EUR raised 58%
+                           </pre>
+                        </div>
+                        <div class='  w-65 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+                           <div class='bg-gradient-to-tr from-fuchsia-600 to-violet-600    h-2.5 rounded-full dark:bg-gray-300' style={{ width: "6rem" }}></div>
+                        </div>
                      </Link>
                   </li>
                </>
