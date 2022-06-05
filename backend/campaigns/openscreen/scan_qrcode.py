@@ -29,7 +29,6 @@ def scaninfo_main(scanid):
     country = json_object["scan"]["locationCountryName"]
     latitude = json_object["scan"]["locationLatitude"]
     longitude = json_object["scan"]["locationLongitude"]
-    gmap = "https://maps.google.com/?q="+latitude+","+longitude+" "
-    msg = "A scan of your child's jewellry from has been made from {},{},{} at {}. The exact latitude and longitude is {},{}".format(
+
+    msg = "A scan has been made from {},{},{} at {}. The exact latitude and longitude is {},{}".format(
         city, region, country, time, latitude, longitude)
-    twilio_contact(msg, gmap)

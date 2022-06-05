@@ -20,7 +20,7 @@ class Campaign(models.Model):
 
     name = models.CharField(max_length=100)
     images = models.CharField(max_length=300)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=1000)
     type = models.CharField(
         max_length=25, choices=TYPE, default=TYPE[0][0])
     status = models.CharField(
@@ -32,6 +32,8 @@ class Campaign(models.Model):
     likes = models.IntegerField(default=0)
     contact_info = models.CharField(max_length=300)
     organiser_id = models.IntegerField()
+    qrcode_url = models.CharField(max_length=500)
+    upi_id = models.CharField(max_length=100)
     is_verified = models.BooleanField(default=False)
 
     def __str__(self):

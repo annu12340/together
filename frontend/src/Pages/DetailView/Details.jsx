@@ -78,6 +78,7 @@ const Details = () => {
                      </div>
                   </div>
                   <Payment />
+                  <img src={data.qrcode_url} />
                </div>
             ))}
          </div>

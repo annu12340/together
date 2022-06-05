@@ -1,4 +1,7 @@
 
+import json
+from .openscreen.scan_qrcode import scaninfo_main
+from .openscreen.generate_qrcode import main
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -7,7 +10,6 @@ from django.contrib.auth import get_user_model
 from drf_yasg.utils import swagger_auto_schema
 from .models import Campaign
 from . import serializers
-from .qrcode import hi
 User = get_user_model()
 
 
@@ -37,11 +39,12 @@ class CampaignView(generics.GenericAPIView):
         serializer = self.serializer_class(data=data)
 
         if serializer.is_valid():
-            hi()
-            serializer.save(organiser_id=request.user.id, is_verified=validity)
-
-            print(f"\n {serializer.data}")
-
+            url = "upi://pay?pa="+data['upi_id']+"&pn=" + \
+                request.user.username+"&cu=INR&tn=Together"
+            img_url = main(url, "asset_name", "Creating a QR code")
+            serializer.save(organiser_id=request.user.id,
+                            qrcode_url=img_url, is_verified=validity)
+            print(f"\n111 The post data is {serializer.data}")
             return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(data=serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -54,7 +57,10 @@ class CampaignIdView(generics.GenericAPIView):
     def get(self, request, campaign_id):
 
         campaign = get_object_or_404(Campaign, pk=campaign_id)
-
+        scanid = request.GET.get('scanId', '')
+        print("scanid",scanid)
+        scaninfo_main(scanid)
+       
         serializer = self.serializer_class(instance=campaign)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
