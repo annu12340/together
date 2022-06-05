@@ -16,7 +16,7 @@ class CampaignView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        campaigns = Campaign.objects.all()
+        campaigns = Campaign.objects.all().order_by('-likes')
 
         serializer = self.serializer_class(instance=campaigns, many=True)
 
@@ -25,10 +25,19 @@ class CampaignView(generics.GenericAPIView):
     def post(self, request):
         data = request.data
         print("data, ", data)
+
+        f = open('scrappedResult.txt', 'r')
+        lines = f.read()
+        answer = lines.find(request.user.username)
+        print("answer", answer)
+        if answer == -1:
+            validity = False
+        else:
+            validity = True
         serializer = self.serializer_class(data=data)
 
         if serializer.is_valid():
-            serializer.save(organiser_id=request.user.id)
+            serializer.save(organiser_id=request.user.id, is_verified=validity)
 
             print(f"\n {serializer.data}")
 
@@ -116,3 +125,47 @@ class UserCampaignDetailView(generics.GenericAPIView):
         serializer = self.serializer_class(instance=campaign)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+class FilterView(generics.GenericAPIView):
+    serializer_class = serializers.CampaignSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, type):
+
+        campaign = Campaign.objects.all().filter(type=type)
+
+        serializer = self.serializer_class(instance=campaign)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+class FilterView(generics.GenericAPIView):
+    serializer_class = serializers.CampaignSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, type):
+
+        campaign = Campaign.objects.all().filter(type=type)
+
+        serializer = self.serializer_class(instance=campaign)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+# class UpdateCampaignLikesView(generics.GenericAPIView):
+
+#     serializer_class = serializers.CampaignLikesUpdateSerializer
+
+#     def put(self, request, campaign_id):
+#         campaign = get_object_or_404(Campaign, pk=campaign_id)
+
+#         serializer = self.serializer_class(
+#             instance=campaign, data=request.data)
+
+#         if serializer.is_valid():
+#             serializer.save()
+
+#             return Response(status=status.HTTP_200_OK, data=serializer.data)
+
+#         return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)

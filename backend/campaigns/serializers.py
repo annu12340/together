@@ -15,3 +15,11 @@ class CampaignStatusUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Campaign
         fields = ['status']
+
+
+# class CampaignLikesUpdateSerializer(serializers.ModelSerializer):
+#     like = serializers.IntegerField()
+
+#     class Meta:
+#         model = Campaign
+#         fields = ['likes']

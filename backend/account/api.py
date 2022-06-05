@@ -30,7 +30,7 @@ def send_otp(request):
             print("request.data", request.data['otp'], random_chars,
                   random_chars == request.data['otp'])
             return redirect('http://localhost:3000/login')
-        return HttpResponse("Your response")
+
     else:
         random_chars = generate_otp()
         print("get request", random_chars)

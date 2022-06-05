@@ -25,10 +25,16 @@ const Details = () => {
       if (response.status === 200) {
          setdetailedview([response.data]);
          console.log("details", detailedview);
-         
       }
    };
 
+   let updateLike = async () => {
+      let response = await axios.get(`http://127.0.0.1:8000/campaigns/like/${params.id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
+
+      if (response.status === 200) {
+         console.log("updateLike", response);
+      }
+   };
    return (
       <>
          <div>
@@ -40,9 +46,13 @@ const Details = () => {
                      <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
                   </div>
                   <div className='flex items-center space-x-6 mt-4'>
-                
                      <span>
                         <ShareButtons url='https://twitter.com/LBank_Exchange/status/1531857343973048326' />
+                     </span>
+                     <span>
+                        <button className='bg-indigo-500 p-3' onClick={updateLike}>
+                           Like
+                        </button>
                      </span>
                   </div>
                   <div className='hidden md:flex items-center space-x-1'>
