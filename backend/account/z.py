@@ -4,47 +4,34 @@ from rest_framework.response import Response
 from .serializer import RegisterSerializer, UserSerializer
 from twilio.rest import Client
 
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, JsonResponse
 import os
 import string
 import random
-from rest_framework.decorators import api_view, renderer_classes
-from rest_framework.renderers import JSONRenderer, TemplateHTMLRenderer
+
 from django.views.decorators.csrf import csrf_exempt
 
 
-random_chars = ''
-
-
 @csrf_exempt
-@api_view(('GET', 'POST'))
-@ renderer_classes((TemplateHTMLRenderer, JSONRenderer))
 def generate_otp(request):
-    # Initialze random_chars only once
-    random_chars = ''.join(random.choices(
-        string.ascii_uppercase + string.digits, k=7))
-    print(random_chars, 'random')
+    # random_chars = ''.join(random.choices(string.ascii_uppercase + string.digits, k = 7))
+    random_chars = 11
     if request.method == 'POST':
-        print(random_chars, 'random')
-        # print("request.data", request.data['otp'], random_chars,
-        #       random_chars == request.data['otp'])
-        # if random_chars == request.data['otp']:
-        #     print("dsa")
-        #     return redirect('/login')
-        if random_chars:
-            return Response(data=random_chars, status=status.HTTP_200_OK)
-
-        return HttpResponse("Your response")
+        print("request.data",  request.POST)
+        if 11 == random_chars:
+            return redirect('/login')
     else:
 
+        print(random_chars, 'random')
         account_sid = "AC5b49d12786b7b09469cfcebf63df7376"
         auth_token = "867971a152020c0e8f38af5848e5844d"
         client = Client(account_sid, auth_token)
-        client.messages.create(
-            body='Welcome to Together. Your otp is '+random_chars,
-            from_='+19362263441', to='+919188058865'
-        )
-        return Response(data=random_chars, status=status.HTTP_200_OK)
+        # client.messages.create(
+        #     body='Your otp is '+random_chars,
+        #     from_='+19362263441', to='+919188058865'
+        # )
+        return HttpResponse('Valid Login Details ')
+        # return Response(data=random_chars, status=status.HTTP_200_OK)
 
 
 # class OTPView(generics.GenericAPIView):

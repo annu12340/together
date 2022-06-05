@@ -7,12 +7,13 @@ import Details from "./pages/DetailView/Details";
 import CapmpaignForm from "./pages/Forms/CampaignForm";
 import PetitonForm from "./pages/Forms/PetitionForm";
 import PetitionDetails from "./pages/DetailView/PetitionDetails";
-import ShareButtons from "./pages/ShareButton/ShareButtons";
+
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Authentication/Login";
 import Register from "./pages/Authentication/Register";
+import OTP from "./pages/Authentication/OTP";
 import Logout from "./pages/Authentication/Logout";
-import Timeline from './pages/History/Timeline'
+import Timeline from "./pages/History/Timeline";
 import Popup from "./pages/DetailView/Popup";
 import SignupLogin from "./pages/Authentication/SignupLogin";
 
@@ -32,7 +33,8 @@ function App() {
                <Route path='/login' element={<Login />}></Route>
                <Route path='/logout' element={<Logout />}></Route>
                <Route path='/register' element={<Register />}></Route>
-               <Route path='/test' element={<SignupLogin/>}></Route>
+               <Route path='/otp' element={<OTP />}></Route>
+               <Route path='/test' element={<SignupLogin />}></Route>
             </Routes>
          </Router>
       </>
