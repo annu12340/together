@@ -146,7 +146,7 @@ class  CampaignForm extends Component {
                  <div className=" wh pt-28 pl-20">
         <Form onSubmit={this.handleSubmit}>
           <Card >
-            <CardHeader className="header">Create your Campaign</CardHeader>
+            <CardHeader className="header">Create your Campaigns</CardHeader>
             <CardBody className="  pl-16 pr-16 pb-16">
               <CardTitle>
                 <MultiStepProgressBar currentStep={this.state.currentStep} />
