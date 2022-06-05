@@ -23,12 +23,12 @@ def scaninfo_main(scanid):
 
     print(result)
 
-    time = json_object["scan"]["scanTime"]
-    city = json_object["scan"]["locationCityName"]
-    region = json_object["scan"]["locationRegionName"]
-    country = json_object["scan"]["locationCountryName"]
-    latitude = json_object["scan"]["locationLatitude"]
-    longitude = json_object["scan"]["locationLongitude"]
+    # time = json_object["scan"]["scanTime"]
+    # city = json_object["scan"]["locationCityName"]
+    # region = json_object["scan"]["locationRegionName"]
+    # country = json_object["scan"]["locationCountryName"]
+    # latitude = json_object["scan"]["locationLatitude"]
+    # longitude = json_object["scan"]["locationLongitude"]
 
-    msg = "A scan has been made from {},{},{} at {}. The exact latitude and longitude is {},{}".format(
-        city, region, country, time, latitude, longitude)
+    # msg = "A scan has been made from {},{},{} at {}. The exact latitude and longitude is {},{}".format(
+    #     city, region, country, time, latitude, longitude)
