@@ -19,6 +19,7 @@ const SignupLogin = () => {
         <input type = "submit" name = "" value = "Sign In"/>
       </div>
     </div>
+      <p className="forget">Not Signup? <a href="#"> Click here</a></p>
       <p className="forget">Forgot Password? <a href="#"> Click here</a></p>
   </div>
   </div> 
@@ -27,3 +28,4 @@ const SignupLogin = () => {
 }
 
 export default SignupLogin
+
