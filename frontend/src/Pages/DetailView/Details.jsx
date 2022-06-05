@@ -38,7 +38,13 @@ const Details = () => {
                <div style={{ width: "98%" }}>
                   <div className='h-96 bg-cover flex flex-wrap' style={{ backgroundImage: `url(${data.images})` }}>
                      <br />
-                     <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
+                     <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>
+                        {data.name}{" "}
+                        <span className='mt-2' style={{ float: "right" }}>
+                           {" "}
+                           {data.is_verified && <img src='https://cdn-icons-png.flaticon.com/512/6269/6269646.png' height='20' width='20' />}
+                        </span>
+                     </h2>
                   </div>
                   <div className='flex items-center space-x-6 mt-4'>
                      <span>

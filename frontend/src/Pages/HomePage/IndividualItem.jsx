@@ -64,18 +64,21 @@ function IndividualItem() {
                               </div>
                            </div>
                         </div>
-                        <h3 className='font-semibold text-lg px-3 mt-2 text-3xl' style={{ color: "white" }}>
-                           {data.name}
-                        </h3>
+
+                        <span>
+                           {" "}
+                           <h3 className='font-semibold text-lg px-3 mt-2 text-3xl' style={{ color: "white" }}>
+                              {data.name} <span style={{ float: "right" }}> {data.is_verified && <img src='https://cdn-icons-png.flaticon.com/512/6269/6269646.png' height='20' width='20' />}</span>
+                           </h3>
+                        </span>
                         <div className='flex items-center px-3 mt-2'>
                            <img src='https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg' className='w-10 h-10 rounded-full' alt='item-owner' />
                            <span className=' ml-2 text-zinc-400'>{data.type}</span>
                            <span className=' ml-2 text-zinc-100'>{data.likes} likes</span>
                         </div>
-                        {/* {data.is_verified && <div>sdsf<div/> } */}
                         <div class='mb-1 text-base text-white'>
                            <pre>
-                              <strong>579,131</strong>EUR raised 58%
+                              <strong>579,131</strong>INR raised 58%
                            </pre>
                         </div>
                         <div class='  w-65 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
