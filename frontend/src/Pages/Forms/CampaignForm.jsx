@@ -13,12 +13,12 @@ import {
   CardText,
   CardFooter
 } from "reactstrap";
-
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
-
+import { set_access_token } from "../utils/accessToken";
 import MultiStepProgressBar from "./MultiStepProgressBar";
+const axios = require("axios");
 
 class  CampaignForm extends Component {
   constructor(props) {
@@ -39,25 +39,35 @@ class  CampaignForm extends Component {
 
     // Bind the submission to handleChange()
     this.handleChange = this.handleChange.bind(this);
-
+    this.handleSubmit = this.handleSubmit.bind(this);
     // Bind new functions for next and previous
     this._next = this._next.bind(this);
     this._prev = this._prev.bind(this);
   }
+  
+  componentDidMount() {
+    set_access_token();
+  }
+  componentDidUpdate() {
+    set_access_token();
+  }
 
-  // Use the submitted data to set the state
+
+  /*// Use the submitted data to set the state
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-  }
+  }*/
+
+  handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   // Trigger an alert on form submission
-  handleSubmit = event => {
+  /*handleSubmit = async event => {
     event.preventDefault();
-    const { campaignname, discription,status, startdate,enddate,contactinfo,targetamount,type } = this.state;
-    alert(`Your registration detail: \n 
+    const { campaignname, description,status, startdate,enddate,contactinfo,targetamount,type } = this.state;
+    /*alert(`Your registration detail: \n 
       Campaign Name: ${campaignname} \n 
       Discription: ${discription} \n
       Type :${type}\n
@@ -66,7 +76,41 @@ class  CampaignForm extends Component {
       End Date :${enddate}\n
       Contact Info: ${contactinfo}\n
       Target Amount: ${targetamount}`);
-  };
+    
+      let body = {
+        name: campaignname,
+        description: description,
+        type: type,
+        status: status,
+        start_date: startdate,
+        end_date: enddate,
+        target_amount: targetamount,
+        contact_info: contactinfo,
+     };
+      let response = await axios.post("http://127.0.0.1:8000/campaigns/", body, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` }  });
+
+      console.log("data", response.data);
+  };*/
+  handleSubmit(event) {
+    axios
+       .post("http://localhost:8000/campaigns/", {
+        name: "vhbn",
+        description: this.state.discription,
+        type: this.state.type,
+        status: this.state.status,
+        start_date: this.state.startdate,
+        end_date: this.state.enddate,
+        target_amount: this.state.targetamount,
+        contact_info: this.state.contactinfo,
+       },{ headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` }  })
+       .then(function(res) {
+          console.log(res);
+       })
+       .catch(function(err) {
+          console.log(err);
+       });
+    event.preventDefault();
+ }
 
   // Test current step with ternary
   // _next and _previous functions will be called on button click
@@ -129,7 +173,7 @@ class  CampaignForm extends Component {
 
     // If the current step is the last step, then render the "submit" button
     if (currentStep > 2) {
-      return <Button color="primary float-right text-white">Submit</Button>;
+      return <Button color="primary float-right text-white" onClick={this.handleSubmit}>Submit</Button>;
     }
     // ...else render nothing
     return null;
