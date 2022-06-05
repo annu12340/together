@@ -1,23 +1,22 @@
 import React from "react";
 import Timeline from "./Timeline";
-// import './homepage.css'
+ import "./timeline.css";
 import "./history.css";
 const HistoryTab = () => {
    return (
       <>
-         <div className='histo2'>
-             
+            <div>
+            <div>
             <div className='p-5'>
-         
                <div className=' w-full lg:max-w-full lg:flex'>
                   <div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden' style={{ backgroundImage: `url(/images/image1.jpg)` }} title='Mountain'></div>
-                  <div style={{ width: "20vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div style={{ width: "20vw" }} className='back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='text-white font-bold text-xl mb-2'>Campaign</div>
                         <p className='text-white text-base'>Without Rs 26.5 Lakhs, I Might Lose My 2-Year-Old Child</p>
                      </div>
                   </div>
-                  <div className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div className=' back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='flex items-center space-x p-4'>
                            <button className='flex space-x-2 items-center px-3 py-2 bg-rose-500 hover:bg-rose-800 rounded-md drop-shadow-md'>
@@ -34,13 +33,13 @@ const HistoryTab = () => {
             <div className='p-5'>
                <div className=' w-full lg:max-w-full lg:flex'>
                   <div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden' style={{ backgroundImage: `url(/images/image2.jpg)` }} title='Mountain'></div>
-                  <div style={{ width: "20vw" }} className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div style={{ width: "20vw" }} className=' back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='text-white font-bold text-xl mb-2'>Campaign</div>
                         <p className='text-white text-base'>I lost my husband,don’t let me lose my daughter too.</p>
                      </div>
                   </div>
-                  <div className='border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900 bg-gray-800 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
+                  <div className='back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                      <div className='mb-8'>
                         <div className='flex items-center space-x p-4'>
                            <button className='flex space-x-2 items-center px-3 py-2 bg-rose-500 hover:bg-rose-800 rounded-md drop-shadow-md'>
@@ -54,10 +53,92 @@ const HistoryTab = () => {
                   </div>
                </div>
             </div>
-            <div className="">
-            <Timeline/>
             </div>
-         </div>
+            <div>
+      <div className="white-bk dashboard-timeline-row">
+      <div className="">
+        <h4 className=" dashboard-heading text-white">Timeline</h4>
+      </div>
+      <hr />
+      <ul className="dashboard-timeline">
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>2nd September 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">IBeTo Launch</h3>
+          </div>
+        </li>
+
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>19th September 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">Registration Closes</h3>
+          </div>
+        </li>
+
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>23rd September 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">Idea submission</h3>
+          </div>
+        </li>
+
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>27th September 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">
+              Announcement of shortlisted teams
+            </h3>
+          </div>
+        </li>
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>7th October 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">
+              Round 1: Detailed Abstract Submission
+            </h3>
+          </div>
+        </li>
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            <span>14th October 2021</span>
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">
+              Announcement of shortlisted teams
+            </h3>
+          </div>
+        </li>
+        <li className="dashboard-timeline-item">
+          <div className="dashboard-timeline-info">
+            {/* <span>14th October 2021</span> */}
+          </div>
+          <div className="dashboard-timeline-marker"></div>
+          <div className="dashboard-timeline-content">
+            <h3 className="dashboard-timeline-title">
+              End of phase 1 : Ideate
+            </h3>
+          </div>
+        </li>
+      </ul>
+      </div>
+    </div>
+    </div>
       </>
    );
 };

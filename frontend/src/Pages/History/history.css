@@ -20,11 +20,14 @@ header:before {
 .histo2 {
    width: 50%;
 }
+.back{
+   background-color:rgb(43, 41, 41) ;
+}
 
 .histo {
    width: 30rem;
    float: right;
-   background: #251f28;
+   background:  rgb(43, 41, 41);
    margin-right: 3rem;
    margin-top: 1rem;
    padding: 0;
