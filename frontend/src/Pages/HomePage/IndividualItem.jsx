@@ -34,7 +34,7 @@ function IndividualItem() {
          <div className='flex flex-col md:flex-row justify-between px-3 mt-3'>
             <h2 className='text-xl text-white font-semibold'>Recent</h2>
             {localStorage.getItem("user")}
-            <div className='inline-flex space-x-3 '>
+            {/* <div className='inline-flex space-x-3 '>
                {["StartUp", "Medical", "Disaster", "Sport"].map((text, index) => (
                   <div className=''>
                      <button onClick={filterBtn} className={` ${index ? "text-zinc-500" : "text-fuchsia-600 underline font-bold"}`}>
@@ -43,8 +43,9 @@ function IndividualItem() {
                   </div>
                ))}
                ;
-            </div>
+            </div> */}
          </div>
+         <br />
          <ul className='p-1.5 flex flex-wrap'>
             {campaign.map((data) => (
                <>
