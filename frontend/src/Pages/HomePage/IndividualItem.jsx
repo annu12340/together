@@ -69,6 +69,7 @@ function IndividualItem() {
                         <div className='flex items-center px-3 mt-2'>
                            <img src='https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg' className='w-10 h-10 rounded-full' alt='item-owner' />
                            <span className=' ml-2 text-zinc-400'>{data.type}</span>
+                           <span className=' ml-2 text-zinc-100'>{data.likes} likes</span>
                         </div>
 
                         <div class='mb-1 text-base text-white'>

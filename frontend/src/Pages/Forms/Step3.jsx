@@ -10,15 +10,16 @@ const Step3 = props => {
     <>
    
       <FormGroup>
-          <div  className="document">
-            <label className="textFeild" >Upload :</label>
-            <Input type="file" name="document1" placeholder="Upload your document here" className=" white w-full textstyle"></Input>
-            </div>
-            <div>
-              <label className="textFeild" >Upload :</label> 
-              <Input type="file" name="document2" placeholder="Upload your document here" className=" w-full white textstyle"></Input>
-            </div> 
-
+           <Label className= " textFeild white float-left pt-12">Upload Documents</Label>
+      
+        <Input type="text" name="document1" placeholder="Past your document link here" className="outline-none py-2 white pr-4 block w-full textstyle"
+         
+          />
+              <Label className= " textFeild white float-left pt-12">Upload Documents</Label>
+      
+        <Input type="text" name="document2" placeholder="Past your document link here" className="outline-none py-2 white pr-4 block w-full textstyle"
+         
+          />
             
       </FormGroup>
     </>

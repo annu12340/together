@@ -15,7 +15,7 @@ import OTP from "./pages/Authentication/OTP";
 import Logout from "./pages/Authentication/Logout";
 import Timeline from "./pages/History/Timeline";
 import Popup from "./pages/DetailView/Popup";
-import SignupLogin from "./pages/Authentication/SignupLogin";
+// import SignupLogin from "./pages/Authentication/SignupLogin";
 
 function App() {
    return (
@@ -34,7 +34,7 @@ function App() {
                <Route path='/logout' element={<Logout />}></Route>
                <Route path='/register' element={<Register />}></Route>
                <Route path='/otp' element={<OTP />}></Route>
-               <Route path='/test' element={<SignupLogin />}></Route>
+               {/* <Route path='/test' element={<SignupLogin />}></Route> */}
             </Routes>
          </Router>
       </>

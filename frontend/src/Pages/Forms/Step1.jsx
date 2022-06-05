@@ -47,12 +47,7 @@ const Step1 = props => {
             <option value="Disaster"className="other">Disaster</option>
        
         </select>
-        <Label className="textFeild">Organisation Id</Label>
-   <Input type="text" name=" organisationid" placeholder="Enter organisation id" className="outline-none py-2 pr-4 white block w-full textstyle"
-          required
-          // value={props.campaignname}
-          // onChange={props.handleChange} 
-          />
+    
       </FormGroup>
     </>
    
