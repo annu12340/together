@@ -5,3 +5,7 @@ backend/account/migrations/__pycache__/
 backend/account/__pycache__/
 .env
 backend/account/config
+backend/campaign/migrations/__pycache__/
+backend/campaign/__pycache__/
+
+**/**/__pycache__/
