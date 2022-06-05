@@ -19,17 +19,18 @@ function OTP() {
    };
 
    const submitButton = async () => {
-      response = await axios.post(`http://127.0.0.1:8000/account/otp`, { otp: inputField.otp });
+      await axios.post(`http://127.0.0.1:8000/account/otp`, { otp: inputField.otp });
       setresponse(inputField.otp);
-      console.log("response1232", response);
    };
    return (
       <div>
          <h1>OTP</h1>
-         <div>
+         <div className='d-flex flex-column align-items-center'>
             <input type='otp' name='otp' onChange={inputsHandler} placeholder='otp' value={inputField.otp} />
 
-            <button onClick={submitButton}>Submit Now</button>
+            <button onClick={submitButton} className='bg-indigo-500'>
+               Submit Now
+            </button>
             {/* {response && <Navigate replace to='/login' />} */}
          </div>
       </div>
