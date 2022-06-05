@@ -62,8 +62,11 @@ export default class Register extends Component {
       </div>
 
       <div className="inputBox">
-        <input type = "submit" name = "" value = "Sign In" onClick={this.handleSubmit}/>
+         <Button type='submit' onClick={this.handleSubmit} >
+          <Link to={'/login'}>Submit</Link>
+            </Button>
       </div>
+      
     </div>
       <p className="forget">Already registered? <Link to={'/login'}> Click here</Link></p>
   </div>
