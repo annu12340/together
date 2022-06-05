@@ -31,7 +31,7 @@ export default function Payment() {
    };
 
    return (
-      <form className='m-4' onSubmit={handleSubmit}>
+      <form className='m-4' style={{ boxShadow: "-5px -5px 10px rgba(255,255,255,0.05),5px 5px 10px rgba(0,0,0,0.5)" }} onSubmit={handleSubmit}>
          <div className='credit-card w-full lg:w-1/2 sm:w-auto  mx-auto rounded-xl bg-grey'>
             <main className='mt-4 p-4'>
                <h1 className='text-xl font-semibold text-gray-100 text-center'>Send ETH payment</h1>
