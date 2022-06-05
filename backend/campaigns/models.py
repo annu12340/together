@@ -7,15 +7,15 @@ from django.db import models
 class Campaign(models.Model):
 
     STATUS = (
-        ('PENDING', 'Pending'),
-        ('IN_TRANSIT', 'In_Transit'),
-        ('DELIVERED', 'delivered')
+        ('Pending', 'Pending'),
+        ('In_Transit', 'In_Transit'),
+        ('delivered', 'delivered')
     )
 
     TYPE = (
-        ('NGO', 'NGO'),
-        ('MEDICAL', 'Medical'),
-        ('STARTUP', 'Startup'),
+        ('ngo', 'NGO'),
+        ('medical', 'Medical'),
+        ('startup', 'Startup'),
     )
 
     name = models.CharField(max_length=100)
