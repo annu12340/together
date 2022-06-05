@@ -52,7 +52,7 @@ export default class Login extends Component {
       
         {/* <input type = "submit" name = "" value = "Sign In" onClick={this.handleSubmit}></input> */}
         <Button type='submit' onClick={this.handleSubmit} >
-          <Link to={'/dashboard'}>Submit</Link>
+          <Link to={'/dashboard'}> nvhjcgaj bsachghg asbcjha Submit</Link>
             </Button>
       </div>
     
