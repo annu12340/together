@@ -71,7 +71,7 @@ function IndividualItem() {
                            <span className=' ml-2 text-zinc-400'>{data.type}</span>
                            <span className=' ml-2 text-zinc-100'>{data.likes} likes</span>
                         </div>
-
+                        {/* {data.is_verified && <div>sdsf<div/> } */}
                         <div class='mb-1 text-base text-white'>
                            <pre>
                               <strong>579,131</strong>EUR raised 58%

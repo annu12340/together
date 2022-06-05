@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from drf_yasg.utils import swagger_auto_schema
 from .models import Campaign
 from . import serializers
-
+from .qrcode import hi
 User = get_user_model()
 
 
@@ -37,6 +37,7 @@ class CampaignView(generics.GenericAPIView):
         serializer = self.serializer_class(data=data)
 
         if serializer.is_valid():
+            hi()
             serializer.save(organiser_id=request.user.id, is_verified=validity)
 
             print(f"\n {serializer.data}")

@@ -48,7 +48,7 @@ class ScrapperView(generics.GenericAPIView):
                         f.write('_'.join(row_data.split(' '))[1:])
                         f.write('\n')
 
-            for i in range(2):
+            for i in range(10):
                 scrapper(str(i))
 
         return Response({'data': 'Data scrapping is completed'}, status=status.HTTP_200_OK)
