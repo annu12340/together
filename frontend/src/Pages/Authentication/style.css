@@ -31,12 +31,12 @@
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }
-.form .input
+.form .input .Button
 {
   text-align: left;
   margin-top: 2rem;
 }
-.form .input .inputBox
+.form .input .inputBox 
 {
   margin-top: 1rem;
 }
@@ -46,6 +46,7 @@
   color: #868686;
   margin-bottom: 0.4rem;
   font-size: 1rem;
+  float: left;
 }
 .form .input .inputBox input
 {

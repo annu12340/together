@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Container } from "react-bootstrap";
+import "./style.css"
+import { Link } from "react-router-dom";
 
 const axios = require("axios");
 
@@ -36,7 +38,50 @@ export default class Register extends Component {
    }
    render() {
       return (
-         <Container style={{ marginTop: "150px" }}>
+         <>
+     
+    <div className='main'>  
+    
+ <div className="form">
+      
+    <h2>Register</h2>
+    <div className="input">
+      <div className="inputBox" controlId='formBasicFirstName'>
+        <label>First Name</label>
+        <input type = "text" placeholder = "Enter first name" name='first_name' value={this.state.first_name} onChange={this.onChange}/>
+      </div>
+      <div className="inputBox" controlId='formBasicLastName'>
+        <label>Second Name</label>
+        <input type = "text" placeholder = "Enter last name"  name='last_name' value={this.state.last_name} onChange={this.onChange} />
+      </div>
+      
+        <div className="inputBox" controlId='formBasicEmail'>
+        <label>Email</label>
+        <input type = "emaiil" placeholder = "Enter email"  name='email' value={this.state.email} onChange={this.onChange}  />
+      </div>
+
+       <div className="inputBox"  controlId='formBasicPassword'>
+        <label>Password</label>
+        <input type='password' placeholder='Password' name='password' value={this.state.password} onChange={this.onChange}  />
+      </div>
+
+      <div className="inputBox">
+         <Button type='submit' onClick={this.handleSubmit} >
+          <Link to={'/login'}>Submit</Link>
+            </Button>
+      </div>
+      
+    </div>
+      <p className="forget">Already registered? <Link to={'/login'}> Click here</Link></p>
+  </div>
+  </div> 
+  </>
+      );
+   }
+}
+
+
+{/* <Container style={{ marginTop: "150px" }}>
             <Form className='d-flex flex-column align-items-center'>
                <Form.Group controlId='formBasicFirstName' style={{ width: "300px" }}>
                   <Form.Label>First name</Form.Label>
@@ -58,7 +103,4 @@ export default class Register extends Component {
                   Register
                </Button>
             </Form>
-         </Container>
-      );
-   }
-}
+         </Container> */}

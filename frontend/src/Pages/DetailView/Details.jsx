@@ -40,7 +40,7 @@ const Details = () => {
          <div>
             {" "}
             {detailedview.map((data) => (
-               <div style={{ width: "80%" }}>
+               <div style={{ width: "98%" }}>
                   <div className='h-96 bg-cover flex flex-wrap' style={{ backgroundImage: `url(${data.images})` }}>
                      <br />
                      <h2 className='font-bold text-3xl pt-3 pl-3 text-white'>{data.name}</h2>
@@ -67,6 +67,25 @@ const Details = () => {
                      <p className='text-center text-[#daded9] p-16 text-1xl' style={{ overflowWrap: "break-word" }}>
                         {data.description}
                      </p>
+                  
+                           <div className="ml-12 pl-56 pb-10" >
+      <object 
+        data='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf'
+        type="application/pdf"
+        width="670"
+        height="578"
+      >
+
+        <ifram
+          src='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf'
+          width="670"
+          height="578"
+        >
+        <p>This browser does not support PDF!</p>
+        </ifram>
+      </object>
+    </div> 
+                     
                   </div>
                   <Payment />
                </div>
