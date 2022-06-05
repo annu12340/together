@@ -4,7 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 import requests
 from bs4 import BeautifulSoup
-
+from . import serializers
 BASEURL = 'https://ngodarpan.gov.in/index.php/home/statewise_ngo/3978/32/'
 PARAMETER = '?per_page=50'
 
@@ -28,6 +28,7 @@ def scrapper(page_number):
 
 
 class ScrapperView(generics.GenericAPIView):
+    serializer_class = serializers.ScrapperSerializer
 
     @swagger_auto_schema(operation_summary="Scrappes the details of all verified NGOs")
     def get(self, request):
