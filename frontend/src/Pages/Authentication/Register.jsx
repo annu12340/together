@@ -38,8 +38,12 @@ export default class Register extends Component {
    }
    render() {
       return (
+         <>
+     
     <div className='main'>  
+    
  <div className="form">
+      
     <h2>Register</h2>
     <div className="input">
       <div className="inputBox" controlId='formBasicFirstName'>
@@ -47,12 +51,12 @@ export default class Register extends Component {
         <input type = "text" placeholder = "Enter first name" name='first_name' value={this.state.first_name} onChange={this.onChange}/>
       </div>
       <div className="inputBox" controlId='formBasicLastName'>
-        <label>Password</label>
+        <label>Second Name</label>
         <input type = "text" placeholder = "Enter last name"  name='last_name' value={this.state.last_name} onChange={this.onChange} />
       </div>
       
         <div className="inputBox" controlId='formBasicEmail'>
-        <label>Password</label>
+        <label>Email</label>
         <input type = "emaiil" placeholder = "Enter email"  name='email' value={this.state.email} onChange={this.onChange}  />
       </div>
 
@@ -71,6 +75,7 @@ export default class Register extends Component {
       <p className="forget">Already registered? <Link to={'/login'}> Click here</Link></p>
   </div>
   </div> 
+  </>
       );
    }
 }

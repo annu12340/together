@@ -46,6 +46,7 @@
   color: #868686;
   margin-bottom: 0.4rem;
   font-size: 1rem;
+  float: left;
 }
 .form .input .inputBox input
 {
