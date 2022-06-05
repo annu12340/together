@@ -12,7 +12,8 @@
 }
 
 .indexedStep.accomplished {
-   background-color: rgba(0, 116, 217, 1);
+   background: #7f1cea;
+   background-image: linear-gradient(to right, #be53e1, #641cea);
 }
 
 .main {
