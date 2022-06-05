@@ -17,9 +17,9 @@ class CampaignStatusUpdateSerializer(serializers.ModelSerializer):
         fields = ['status']
 
 
-class CampaignLikesUpdateSerializer(serializers.ModelSerializer):
-    like = serializers.IntegerField()
+# class CampaignLikesUpdateSerializer(serializers.ModelSerializer):
+#     like = serializers.IntegerField()
 
-    class Meta:
-        model = Campaign
-        fields = ['likes']
+#     class Meta:
+#         model = Campaign
+#         fields = ['likes']

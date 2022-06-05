@@ -144,19 +144,19 @@ class FilterView(generics.GenericAPIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-class UpdateCampaignLikesView(generics.GenericAPIView):
+# class UpdateCampaignLikesView(generics.GenericAPIView):
 
-    serializer_class = serializers.CampaignLikesUpdateSerializer
+#     serializer_class = serializers.CampaignLikesUpdateSerializer
 
-    def put(self, request, campaign_id):
-        campaign = get_object_or_404(Campaign, pk=campaign_id)
+#     def put(self, request, campaign_id):
+#         campaign = get_object_or_404(Campaign, pk=campaign_id)
 
-        serializer = self.serializer_class(
-            instance=campaign, data=request.data)
+#         serializer = self.serializer_class(
+#             instance=campaign, data=request.data)
 
-        if serializer.is_valid():
-            serializer.save()
+#         if serializer.is_valid():
+#             serializer.save()
 
-            return Response(status=status.HTTP_200_OK, data=serializer.data)
+#             return Response(status=status.HTTP_200_OK, data=serializer.data)
 
-        return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)
+#         return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)
