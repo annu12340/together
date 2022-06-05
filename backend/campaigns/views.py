@@ -25,10 +25,19 @@ class CampaignView(generics.GenericAPIView):
     def post(self, request):
         data = request.data
         print("data, ", data)
+
+        f = open('scrappedResult.txt', 'r')
+        lines = f.read()
+        answer = lines.find(request.user.username)
+        print("answer", answer)
+        if answer == -1:
+            validity = False
+        else:
+            validity = True
         serializer = self.serializer_class(data=data)
 
         if serializer.is_valid():
-            serializer.save(organiser_id=request.user.id)
+            serializer.save(organiser_id=request.user.id, is_verified=validity)
 
             print(f"\n {serializer.data}")
 

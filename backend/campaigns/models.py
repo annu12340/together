@@ -29,9 +29,10 @@ class Campaign(models.Model):
     start_at = models.DateTimeField(auto_now=True)
     end_date = models.DateTimeField()
     target_amount = models.IntegerField()
-    likes=models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
     contact_info = models.CharField(max_length=300)
     organiser_id = models.IntegerField()
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return f" {self.name} "

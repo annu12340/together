@@ -42,11 +42,13 @@ class ScrapperView(generics.GenericAPIView):
 
                 for j in table1.find_all('tr')[1:]:
                     row_data = j.find_all('td')[1].text
+
                     if row_data:
-                        f.write(row_data)
+
+                        f.write('_'.join(row_data.split(' '))[1:])
                         f.write('\n')
 
-            for i in range(10):
+            for i in range(2):
                 scrapper(str(i))
 
         return Response({'data': 'Data scrapping is completed'}, status=status.HTTP_200_OK)
