@@ -2,10 +2,8 @@ import requests
 import json
 from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse, Say
-from dotenv import load_dotenv
 import os
 from datetime import datetime
-load_dotenv()
 
 
 def scaninfo_main(scanid):

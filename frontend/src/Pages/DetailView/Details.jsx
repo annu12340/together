@@ -8,7 +8,15 @@ import { set_access_token } from "./../utils/accessToken";
 const Details = () => {
    const params = useParams();
    let [detailedview, setdetailedview] = useState([]);
-
+   const [value, setValue] = React.useState(0);
+   const actArray = [];
+   for (let i = 0; i < 4; i++) {
+      if (i === value) {
+         actArray.push("btn active");
+      } else {
+         actArray.push("btn");
+      }
+   }
    useEffect(() => {
       set_access_token();
       getdetailedview();
@@ -56,29 +64,58 @@ const Details = () => {
                         </button>
                      </span>
                   </div>
-                  <div className='hidden md:flex items-center space-x-1'>
-                     <a href='' className='py-4 px-2 text-xl text-gray-500 hover:text-green-500  border-b-4 border-green-500 font-semibold '>
-                        Story
-                     </a>
-                     <a href='#documents' className='py-4 px-2 text-xl text-gray-500 font-semibold hover:text-green-500 '>
-                        Documents
-                     </a>
-                  </div>
-                  <div>
-                     <p className='text-center text-[#daded9] p-16 text-1xl' style={{ overflowWrap: "break-word" }}>
-                        {data.description}
-                     </p>
 
-                     <div className='ml-12 pl-56 pb-10'>
-                        <object data={data.verification_documents} type='application/pdf' width='670' height='578'>
-                           <ifram src={data.verification_documents} width='670' height='578'>
-                              <p>This browser does not support PDF!</p>
-                           </ifram>
-                        </object>
+                  <div className='App'>
+                     <ul style={{ listStyle: "none", paddingTop: "5rem" }}>
+                        <li style={{ float: "left" }}>
+                           <button
+                              type='button'
+                              className={actArray[0]}
+                              onClick={() => {
+                                 setValue(
+                                    <p className='text-center text-[#daded9] p-16 text-1xl' style={{ overflowWrap: "break-word" }}>
+                                       {data.description}
+                                    </p>
+                                 );
+                              }}>
+                              Story
+                           </button>
+                        </li>
+                        <li style={{ float: "left" }}>
+                           <button
+                              type='button'
+                              className={actArray[1]}
+                              onClick={() => {
+                                 setValue(
+                                    <div className='ml-12 pl-56 pb-10'>
+                                       <object data={data.verification_documents} type='application/pdf' width='670' height='578'>
+                                          <ifram src={data.verification_documents} width='670' height='578'>
+                                             <p>This browser does not support PDF!</p>
+                                          </ifram>
+                                       </object>
+                                    </div>
+                                 );
+                              }}>
+                              Documents
+                           </button>
+                        </li>
+                        <li style={{ float: "left" }}>
+                           <button
+                              type='button'
+                              className={actArray[3]}
+                              onClick={() => {
+                                 setValue(<Payment url={data.qrcode_url} />);
+                              }}>
+                              Payment
+                           </button>
+                        </li>
+                     </ul>
+                     <br />
+                     <br />
+                     <div>
+                        <h2>{value}</h2>
                      </div>
                   </div>
-                  <Payment />
-                  <img src={data.qrcode_url} />
                </div>
             ))}
          </div>

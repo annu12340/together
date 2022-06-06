@@ -33,7 +33,7 @@ class Campaign(models.Model):
     likes = models.IntegerField(default=0)
     contact_info = models.CharField(max_length=300)
     organiser_id = models.IntegerField()
-    qrcode_url = models.CharField(max_length=2500)
+    qrcode_url = models.CharField(max_length=2800)
     upi_id = models.CharField(max_length=100)
     verification_documents = models.CharField(max_length=200, default='')
     is_verified = models.BooleanField(default=False)

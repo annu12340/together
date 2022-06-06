@@ -19,7 +19,7 @@ const startPayment = async ({ ether, addr }) => {
    }
 };
 
-export default function Payment() {
+export default function Payment({}) {
    const handleSubmit = async (e) => {
       e.preventDefault();
       const data = new FormData(e.target);
