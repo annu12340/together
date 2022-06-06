@@ -79,11 +79,11 @@ function IndividualItem() {
                            <br />
                            <div class='mb-1 text-base text-white'>
                               <pre>
-                                 <strong>579,131</strong>INR raised 58%
+                                 <strong> {data.current_amount}</strong> INR raised {(data.current_amount / data.target_amount) * 100}%
                               </pre>
                            </div>
                            <div class='  w-65 bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-                              <div class='bg-gradient-to-tr from-fuchsia-600 to-violet-600    h-2.5 rounded-full dark:bg-gray-300' style={{ width: "6rem" }}></div>
+                              <div class='bg-gradient-to-tr from-fuchsia-600 to-violet-600    h-2.5 rounded-full dark:bg-gray-300' style={{ width: (data.current_amount / data.target_amount) * 10 + "rem" }}></div>
                            </div>
                         </div>
                      </Link>

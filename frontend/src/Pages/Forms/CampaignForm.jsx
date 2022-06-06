@@ -26,6 +26,7 @@ class CampaignForm extends Component {
          contactinfo: "",
          targetamount: 0,
          upi: "",
+         verification_documents: "",
       };
 
       // Bind the submission to handleChange()
@@ -99,6 +100,7 @@ class CampaignForm extends Component {
                organiser_id: 0,
                qrcode_url: "dsd",
                upi_id: this.state.upi,
+               verification_documents: this.state.verification_documents,
                is_verified: true,
             },
             { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } }
@@ -203,7 +205,7 @@ class CampaignForm extends Component {
                                  <CardText />
                                  <Step1 name='Campaign' currentStep={this.state.currentStep} handleChange={this.handleChange} campaignname={this.state.campaignname} discription={this.state.discription} type={this.state.type} images={this.state.images} />
                                  <Step2 name='Campaign' target='amount' currentStep={this.state.currentStep} handleChange={this.handleChange} startdate={this.state.startdate} enddate={this.state.enddate} contactinfo={this.state.contactinfo} targetamount={this.state.targetamount} />
-                                 <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} upi={this.state.upi} />
+                                 <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} upi={this.state.upi} verification_documents={this.state.verification_documents} />
                               </CardBody>
                               <CardFooter className='footerButton'>
                                  {this.previousButton}

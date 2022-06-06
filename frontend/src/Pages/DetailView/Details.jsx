@@ -70,8 +70,8 @@ const Details = () => {
                      </p>
 
                      <div className='ml-12 pl-56 pb-10'>
-                        <object data='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf' type='application/pdf' width='670' height='578'>
-                           <ifram src='https://pdfjs-express.s3-us-west-2.amazonaws.com/docs/choosing-a-pdf-viewer.pdf' width='670' height='578'>
+                        <object data={data.verification_documents} type='application/pdf' width='670' height='578'>
+                           <ifram src={data.verification_documents} width='670' height='578'>
                               <p>This browser does not support PDF!</p>
                            </ifram>
                         </object>
