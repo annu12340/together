@@ -1,6 +1,5 @@
 .indexedStep {
   color: white;
-  
   width: 45px;
   height: 45px;
   font-size: 12px;
@@ -12,10 +11,13 @@
 }
 
 .indexedStep.accomplished {
-  background-color: rgba(0, 116, 217, 1);
+  background-color: rgb(170, 56, 159);
 
 }
 
+.progress{
+  color: rgb(170, 56, 159);;
+}
 
 .main {
   font-family: sans-serif;
@@ -42,8 +44,8 @@
 
 .textFeild{
   float: left;
-  padding-bottom: 16px;
-  padding-top: 28px;
+  padding-bottom: 26px;
+  padding-top: 26px;
   color: white;
   font-size: 16px;
 
@@ -93,6 +95,7 @@
       .footerButton{
         font-size: 28px;
         padding-left: 16px;
+        color:rgb(170, 56, 159);;
       }
       .other{
         color:black;

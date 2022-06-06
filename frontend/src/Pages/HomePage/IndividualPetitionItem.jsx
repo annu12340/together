@@ -32,7 +32,7 @@ const SidebarRight = () => {
                        
                         <p className='text-sm pb-4 text-zinc-400'>Needs {data.target_signature_counter}</p>
                           <Link to={`/petition/${data.id}`}>
-                        <a className=' btn  w-24 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded'>
+                        <a className=' btn  w-24 bg-gradient-to-tr  to-violet-600 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 border-violet-700 hover:border-violet-500 rounded'>
                            Sign
                         </a>
                         </Link> 

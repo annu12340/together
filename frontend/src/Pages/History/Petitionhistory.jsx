@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react'
 import Timeline from "./Timeline";
  import "./timeline.css";
 import "./history.css";
-const HistoryTab = () => {
-   return (
-      <>
-            <div>
+
+const Petitionhistory = () => {
+  return (
+    <>
+      <div>
             <div className="histo">
             <div className='p-5'>
                <div className=' w-full lg:max-w-full lg:flex'>
@@ -139,8 +140,8 @@ const HistoryTab = () => {
       </div>
     </div>
     </div>
-      </>
-   );
-};
+    </>
+  )
+}
 
-export default HistoryTab;
+export default Petitionhistory

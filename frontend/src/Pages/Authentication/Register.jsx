@@ -56,8 +56,8 @@ export default class Register extends Component {
       </div>
       
         <div className="inputBox" controlId='formBasicEmail'>
-        <label>Email</label>
-        <input type = "emaiil" placeholder = "Enter email"  name='email' value={this.state.email} onChange={this.onChange}  />
+        <label>Username</label>
+        <input type = "email" placeholder = "Enter username"  name='email' value={this.state.email} onChange={this.onChange}  />
       </div>
 
        <div className="inputBox"  controlId='formBasicPassword'>
@@ -67,7 +67,7 @@ export default class Register extends Component {
 
       <div className="inputBox">
          <Button type='submit' onClick={this.handleSubmit} >
-          <Link to={'/login'}>Submit</Link>
+          <Link to={'/otp'}>Submit</Link>
             </Button>
       </div>
       

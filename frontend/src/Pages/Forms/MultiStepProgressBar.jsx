@@ -17,8 +17,8 @@ const MultiStepProgressBar = props => {
   }
 
   return (
-   <div class="pt-28">
-    <ProgressBar percent={stepPercentage}>
+   <div class="pt-16 progress">
+    <ProgressBar  percent={stepPercentage}>
       <Step>
         {({ accomplished, index }) => (
           <div

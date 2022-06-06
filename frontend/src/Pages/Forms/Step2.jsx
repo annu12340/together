@@ -40,16 +40,16 @@ const Step2 = props => {
           </div>
           
           
-        <div className=" date">
-            <Label  className="textFeild  white float-left pt-12 " >Start Date : </Label>
-        <Input type="date" name="startdate"placeholder="Enter your start date" className="pt-12 white float-right textstyle"
+        <div className="">
+            <Label  className="textFeild white float-left pt-12" >Start Date : </Label>
+        <Input type="date" name="startdate"placeholder="Enter your start date" className="pt-12 white "
           value={props.startdate} 
           onChange={props.handleChange} 
           />
 
    
-          <Label className=" textFeild white float-right pt-12 ">End Date : </Label>
-          <Input type="date" name="enddate" placeholder="Enter your end date" className="pt-12 pb-12 white float-left textstyle"
+          <Label className=" textFeild white float-left pt-12 ">End Date : </Label>
+          <Input type="date" name="enddate" placeholder="Enter your end date" className="pt-12  white "
           value={props.enddate} 
           onChange={props.handleChange} 
           />

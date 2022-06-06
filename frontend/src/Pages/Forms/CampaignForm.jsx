@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Container, Row, Col } from "reactstrap";
 import "./MultiStepProgressBar.css";
 import  { Component } from "react";
+import { Link } from "react-router-dom";
 import {
   Form,
   Button,
@@ -115,9 +116,11 @@ class  CampaignForm extends Component {
     // If the current step is not 3, then render the "next" button
     if (currentStep < 3) {
       return (
+        
         <Button color="primary float-right text-white" onClick={this._next}>
           Next
         </Button>
+       
       );
     }
     // ...else render nothing
@@ -129,7 +132,11 @@ class  CampaignForm extends Component {
 
     // If the current step is the last step, then render the "submit" button
     if (currentStep > 2) {
-      return <Button color="primary float-right text-white">Submit</Button>;
+      return (
+        <Link to={'/dashboard'}>
+      <Button color="primary float-right text-white">Submit</Button>
+       </Link>
+      );
     }
     // ...else render nothing
     return null;
