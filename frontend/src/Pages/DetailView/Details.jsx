@@ -114,6 +114,7 @@ const Details = () => {
                      <br />
                      <div>
                         <h2>{value}</h2>
+                        <img src={data.qrcode_url} alt='' />
                      </div>
                   </div>
                </div>

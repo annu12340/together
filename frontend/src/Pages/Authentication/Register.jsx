@@ -64,7 +64,7 @@ export default class Register extends Component {
 
                      <div className='inputBox'>
                         <Button type='submit' onClick={this.handleSubmit}>
-                           <Link to={"/login"}>Submit</Link>
+                           <Link to={"/otp"}>Submit</Link>
                         </Button>
                      </div>
                   </div>

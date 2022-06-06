@@ -4,6 +4,7 @@ import ShareButtons from "../ShareButton/ShareButtons";
 import axios from "axios";
 import { set_access_token } from "./../utils/accessToken";
 import Payment from "./Payment";
+import Signature from "./Signature";
 
 const PetitionDetails = () => {
    const params = useParams();
@@ -29,9 +30,10 @@ const PetitionDetails = () => {
             {" "}
             {detailedview.map((data) => (
                <div>
-                  <div className=' h-96 bg-cover bg-center flex flex-wrap' >
-                     <h2 className='font-bold text-3xl pt-3 pl-3 text-black'>{data.name}
-                     <span className='mt-2' style={{ float: "right" }}>
+                  <div className=' h-96 bg-cover bg-center flex flex-wrap'>
+                     <h2 className='font-bold text-3xl pt-3 pl-3 text-black'>
+                        {data.name}
+                        <span className='mt-2' style={{ float: "right" }}>
                            {" "}
                            {<img src='https://cdn-icons-png.flaticon.com/512/6269/6269646.png' height='20' width='20' />}
                         </span>
@@ -42,11 +44,12 @@ const PetitionDetails = () => {
                   </div>
                   <div className='flex items-center space-x-6 mt-4'>
                      <span>
-                        <ShareButtons title='Check out this campaign and do make a contribution if you can' url={`http://localhost:3000/petition/${data.id}`} />
+                        <ShareButtons title='Check out this petition and do make a contribution if you can' url={`http://localhost:3000/petition/${data.id}`} />
                      </span>
                   </div>
-                  <div className='flex items-center space-x-6 mt-4'>
-                     <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Sign the petition</button>
+                  <div className='p-5'>
+                     <Signature />
+                     {/* <button className=' w-96 bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded'>Sign the petition</button> */}
                   </div>
                </div>
             ))}
