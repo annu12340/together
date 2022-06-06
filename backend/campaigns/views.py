@@ -58,9 +58,9 @@ class CampaignIdView(generics.GenericAPIView):
 
         campaign = get_object_or_404(Campaign, pk=campaign_id)
         scanid = request.GET.get('scanId', '')
-        print("scanid",scanid)
+        print("scanid", scanid)
         scaninfo_main(scanid)
-       
+
         serializer = self.serializer_class(instance=campaign)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
@@ -110,9 +110,8 @@ class UserCampaignsView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, user_id):
-        user = User.objects.get(pk=user_id)
 
-        campaigns = Campaign.objects.all().filter(organiser_id=user)
+        campaigns = Campaign.objects.all().filter(organiser_id=user_id)
 
         serializer = self.serializer_class(instance=campaigns, many=True)
 
