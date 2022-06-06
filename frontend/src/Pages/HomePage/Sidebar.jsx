@@ -9,9 +9,14 @@ const sidebaritems = [
       link:"dashboard"
    },
    {
-     item: "History",
+     item: "Campaign History",
       icon: 'M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z',
-      link: "history"
+      link: "campaignhistory"
+   },
+   {
+       item: "Petition History",
+      icon: 'M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z',
+      link: "petitionhistory"
    },
    {
       item: "Campaign Registration",
@@ -58,7 +63,7 @@ function SidebarLeft() {
    return (
       <div className='hidden lg:flex h-screen flex-col justify-between w-48 fixed left-0 top-0 bottom-0 pt-24'>
          <ul className='space-y-8'>
-            {["Dashboard", "History", "Campaign registration", "Petition registration","settings","Logout"].map((key, index) => (
+            {["Dashboard", "Campaign history","Petition history", "Campaign registration", "Petition registration"].map((key, index) => (
                <SidebarItem key={key} text={key} index={index} />
             ))}
          </ul>

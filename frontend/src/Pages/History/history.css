@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700";
-
 #timeline .timeline-item:after,
 #timeline .timeline-item:before,
 header:after,
@@ -26,6 +24,7 @@ header:before {
 
    float: left;
    padding: 0;
+  font-family: "Open Sans", sans-serif;
 
    line-height: 1.5;
    font-size: 16px;
@@ -191,8 +190,8 @@ header:before {
 .btn {
    padding: 10px 30px;
    text-decoration: none;
-   background: #cc212c;
-   border: 1px solid #cc212c;
+   background: rgb(170, 56, 159);
+   border: 1px solid rgb(170, 56, 159);
    color: #fff;
    display: inline-block;
    position: relative;
@@ -204,8 +203,8 @@ header:before {
 
 .btn:hover {
    box-shadow: none;
-   background: #000;
-   border-color: #000;
+   background:  rgb(170, 56, 159);
+   border-color:  rgb(170, 56, 159);
 }
 
 .right {

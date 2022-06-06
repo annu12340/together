@@ -1,33 +1,81 @@
-import React from "react";
-import { FormGroup, Label, Input } from "reactstrap";
+import React, { Component } from "react";
+import { Form, Button, Container } from "react-bootstrap";
+import "./style.css";
+import { Link } from "react-router-dom";
 
-const Step2 = (props) => {
-   if (props.currentStep !== 2) {
-      return null;
+const axios = require("axios");
+
+export default class Register extends Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         first_name: "",
+         last_name: "",
+         email: "",
+         password: "",
+      };
+      this.onChange = this.onChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
    }
+   onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+   handleSubmit(event) {
+      axios
+         .post("http://localhost:8000/account/api/register", {
+            username: this.state.email,
+            password: this.state.password,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+         })
+         .then(function(res) {
+            console.log(res);
+            localStorage.setItem("refresh_token", res.data.refresh);
+            localStorage.setItem("user", res.config.data);
+         })
+         .catch(function(err) {
+            console.log(err);
+         });
+      event.preventDefault();
+   }
+   render() {
+      return (
+         <>
+            <div className='main'>
+               <div className='form'>
+                  <h2>Register</h2>
+                  <div className='input'>
+                     <div className='inputBox' controlId='formBasicFirstName'>
+                        <label>First Name</label>
+                        <input type='text' placeholder='Enter first name' name='first_name' value={this.state.first_name} onChange={this.onChange} />
+                     </div>
+                     <div className='inputBox' controlId='formBasicLastName'>
+                        <label>Second Name</label>
+                        <input type='text' placeholder='Enter last name' name='last_name' value={this.state.last_name} onChange={this.onChange} />
+                     </div>
 
-   return (
-      <>
-         <FormGroup>
-            <div>
-               <Label className=' textFeild white float-left pt-12'>Contact info</Label>
+                     <div className='inputBox' controlId='formBasicEmail'>
+                        <label>Email</label>
+                        <input type='emaiil' placeholder='Enter email' name='email' value={this.state.email} onChange={this.onChange} />
+                     </div>
 
-               <Input type='text' name='contactinfo' placeholder='Enter your contact info' className='outline-none py-2 white pr-4 block w-full textstyle' value={props.contactinfo} onChange={props.handleChange} />
-               <Label className=' textFeild white float-left pt-12 pb-12'>Target {props.target}</Label>
+                     <div className='inputBox' controlId='formBasicPassword'>
+                        <label>Password</label>
+                        <input type='password' placeholder='Password' name='password' value={this.state.password} onChange={this.onChange} />
+                     </div>
 
-               <Input type='number' name='targetamount' placeholder='Enter your target' className='outline-none py-2 white pr-4 block w-full textstyle' value={props.targetamount} onChange={props.handleChange} />
+                     <div className='inputBox'>
+                        <Button type='submit' onClick={this.handleSubmit}>
+                           <Link to={"/login"}>Submit</Link>
+                        </Button>
+                     </div>
+                  </div>
+                  <p className='forget'>
+                     Already registered? <Link to={"/login"}> Click here</Link>
+                  </p>
+               </div>
             </div>
+         </>
+      );
+   }
+}
 
-            <div className=' date'>
-               <Label className='textFeild  white float-left pt-12 '>Start Date : </Label>
-               <Input type='date' name='startdate' placeholder='Enter your start date' className='pt-12 white float-right textstyle' value={props.startdate} onChange={props.handleChange} />
 
-               <Label className=' textFeild white float-right pt-12 '>End Date : </Label>
-               <Input type='date' name='enddate' placeholder='Enter your end date' className='pt-12 pb-12 white float-left textstyle' value={props.enddate} onChange={props.handleChange} />
-            </div>
-         </FormGroup>
-      </>
-   );
-};
-
-export default Step2;
