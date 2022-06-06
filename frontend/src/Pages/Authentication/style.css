@@ -9,15 +9,13 @@
   padding: 0;
   box-sizing: border-box;  
 } */
-.main
-{
-    width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #131419;
-
+.main {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background: #131419;
 }
 .form {
    position: absolute;
@@ -27,7 +25,8 @@
    border-radius: 10px;
    text-align: center;
 }
-.form h2 {
+.form h2,
+.heading {
    color: #c7c7c7;
    font-weight: 700;
    text-transform: uppercase;

@@ -6,16 +6,7 @@ const sidebaritems = [
       icon: "M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z",
       link: "dashboard",
    },
-   {
-      item: "Campaign History",
-      icon: "M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z",
-      link: "campaignhistory",
-   },
-   {
-      item: "Petition History",
-      icon: "M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z",
-      link: "petitionhistory",
-   },
+
    {
       item: "Create campaign",
       icon: "M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z",
@@ -25,6 +16,16 @@ const sidebaritems = [
       item: "Create petition",
       icon: "M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z",
       link: "petitionregistration",
+   },
+   {
+      item: "Campaign History",
+      icon: "M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z",
+      link: "campaignhistory",
+   },
+   {
+      item: "Petition History",
+      icon: "M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z",
+      link: "petitionhistory",
    },
    {
       item: "Settings",
@@ -59,7 +60,7 @@ function SidebarLeft() {
    return (
       <div className='hidden lg:flex h-screen flex-col justify-between w-48 fixed left-0 top-0 bottom-0 pt-24'>
          <ul className='space-y-8'>
-            {["Dashboard", "Campaign history", "Petition history", "Campaign registration", "Petition registration"].map((key, index) => (
+            {["Dashboard", "Add campaign ", "Add petition", "Campaign history", "Petition history"].map((key, index) => (
                <SidebarItem key={key} text={key} index={index} />
             ))}
          </ul>

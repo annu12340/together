@@ -35,7 +35,7 @@ export default class Login extends Component {
    render() {
       return (
          <div className='main'>
-            <div className='form'>
+            <div className='form form-shadow'>
                <h2>Login</h2>
                <div className='input'>
                   <div className='inputBox' controlId='formBasicEmail'>

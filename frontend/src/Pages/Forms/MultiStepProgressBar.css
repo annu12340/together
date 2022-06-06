@@ -70,7 +70,7 @@ input:hover {
    box-shadow: none;
    border-bottom: 1px solid #ddd;
 }
-form {
+.form-shadow {
    box-shadow: 1px 0 5px 5px rgba(9, 9, 9, 0.45);
 }
 
