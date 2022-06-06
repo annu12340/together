@@ -1,128 +1,115 @@
 .indexedStep {
-  color: white;
-  width: 45px;
-  height: 45px;
-  font-size: 12px;
-  background-color: rgba(211, 211, 211, 0.8);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   color: white;
+
+   width: 45px;
+   height: 45px;
+   font-size: 12px;
+   background-color: rgba(211, 211, 211, 0.8);
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .indexedStep.accomplished {
-  background-color: rgb(170, 56, 159);
-
-}
-
-.progress{
-  color: rgb(170, 56, 159);;
+   background: #7f1cea;
+   background-image: linear-gradient(to right, #be53e1, #641cea);
 }
 
 .main {
-  font-family: sans-serif;
-  text-align: center;
-  
+   font-family: sans-serif;
+   text-align: center;
 }
 
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height:60%;
-  font-size: 20px;
-  margin-left:28px;
-  
-  
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 60%;
+   font-size: 20px;
+   margin-left: 28px;
 }
-.header{
-  font-size: 26px;
-  color: white;
-  padding-top: 5%;
+.header {
+   font-size: 26px;
+   color: white;
+   padding-top: 5%;
 }
 
-.textFeild{
-  float: left;
-  padding-bottom: 26px;
-  padding-top: 26px;
-  color: white;
-  font-size: 16px;
-
+.textFeild {
+   float: left;
+   padding-bottom: 16px;
+   padding-top: 28px;
+   color: white;
+   font-size: 16px;
 }
-.textstyle{
-  font-size: 16px;
+.textstyle {
+   font-size: 16px;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+   -webkit-appearance: none;
+   margin: 0;
+}
+input,
+textarea,
+select {
+   outline: none;
+   border: none;
+   background: none;
+   border-bottom: 1px solid #fff;
+   border-radius: 0px !important;
+}
 
+input:focus,
+input:hover {
+   border: none;
+   margin: 0 auto;
+   background: none;
+   box-shadow: none;
+   border-bottom: 1px solid #ddd;
+}
+form {
+   box-shadow: 1px 0 5px 5px rgba(9, 9, 9, 0.45);
+}
 
-      input[type=number]::-webkit-inner-spin-button, 
-      input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
-      }
-      input,textarea,select {
-      outline: none;
-      border: none;
-      background: none;
-      border-bottom: 1px solid #fff;
-      border-radius: 0px !important;
-
-      }
-
-
-      input:focus, input:hover {
-      border: none;
-      margin: 0 auto;
-      background: none;
-      box-shadow: none;
-      border-bottom: 1px solid #ddd;
-      }
-      form{
-      box-shadow: 1px 0 10px 15px rgba(0,0,0,.5);
-      }
- 
-      @media (min-width: 768px){
-      .w-40{
+@media (min-width: 768px) {
+   .w-40 {
       width: 30%;
-      }
-      }
-      @media (max-width: 768px){
-      .w-40{
+   }
+}
+@media (max-width: 768px) {
+   .w-40 {
       width: 80%;
-      }
-      }
-      .footerButton{
-        font-size: 28px;
-        padding-left: 16px;
-        color:rgb(170, 56, 159);;
-      }
-      .other{
-        color:black;
-      }
-      .choose{
-        color: white;
-      }
-
-
-      .background{
-      background-image: url(https://th.bing.com/th/id/OIP.a7zcxkWpyz-ZV0e_dRu_WwHaEl?pid=ImgDet&w=1280&h=792&rs=1);
-      background-size: cover;
-      /* background-position: center; */
-      font-family: 'Raleway', sans-serif;
-      
-      }
-      ::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+   }
 }
-.document{
-  color: white;
-  padding-top: 28px;
-  padding-bottom: 28px;
-}.wh{
-  width: 96%;
-  float: right;
+.footerButton {
+   font-size: 28px;
+   padding-left: 16px;
+}
+.other {
+   color: black;
+}
+.choose {
+   color: white;
 }
 
-
-      
+.background {
+   background-image: url(https://th.bing.com/th/id/OIP.a7zcxkWpyz-ZV0e_dRu_WwHaEl?pid=ImgDet&w=1280&h=792&rs=1);
+   background-size: cover;
+   /* background-position: center; */
+   font-family: "Raleway", sans-serif;
+}
+::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
+.document {
+   color: white;
+   padding-top: 28px;
+   padding-bottom: 28px;
+}
+.wh {
+   width: 96%;
+   float: right;
+}
