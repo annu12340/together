@@ -13,8 +13,7 @@ import Login from "./pages/Authentication/Login";
 import Register from "./pages/Authentication/Register";
 import OTP from "./pages/Authentication/OTP";
 import Logout from "./pages/Authentication/Logout";
-import Timeline from "./pages/History/Timeline";
-import Popup from "./pages/DetailView/Popup";
+
 // import SignupLogin from "./pages/Authentication/SignupLogin";
 
 function App() {
