@@ -16,9 +16,9 @@ class PetitionView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        Petitions = Petition.objects.all()
+        petitions = Petition.objects.all()
 
-        serializer = self.serializer_class(instance=Petitions, many=True)
+        serializer = self.serializer_class(instance=petitions, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -42,20 +42,20 @@ class PetitionIdView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, Petition_id):
-
-        Petition = get_object_or_404(Petition, pk=Petition_id)
-
-        serializer = self.serializer_class(instance=Petition)
-
+    
+        petition = get_object_or_404(Petition, pk=Petition_id)
+        
+        serializer = self.serializer_class(instance=petition)
+        
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     # @swagger_auto_schema(operation_summary="Update an Petition by its ID")
     def put(self, request, Petition_id):
 
-        Petition = get_object_or_404(Petition, pk=Petition_id)
+        petition = get_object_or_404(Petition, pk=Petition_id)
 
         serializer = self.serializer_class(
-            instance=Petition, data=request.data)
+            instance=petition, data=request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -67,9 +67,9 @@ class PetitionIdView(generics.GenericAPIView):
     # @swagger_auto_schema(operation_summary="Delete an Petition by its ID")
     def delete(self, request, Petition_id):
 
-        Petition = get_object_or_404(Petition, id=Petition_id)
+        petition = get_object_or_404(Petition, id=Petition_id)
 
-        Petition.delete()
+        petition.delete()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
@@ -80,10 +80,10 @@ class UpdatePetitionStatusView(generics.GenericAPIView):
 
     # @swagger_auto_schema(operation_summary="Update the status of an Petition")
     def put(self, request, Petition_id):
-        Petition = get_object_or_404(Petition, pk=Petition_id)
+        petition = get_object_or_404(Petition, pk=Petition_id)
 
         serializer = self.serializer_class(
-            instance=Petition, data=request.data)
+            instance=petition, data=request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -101,9 +101,9 @@ class UserPetitionsView(generics.GenericAPIView):
     def get(self, request, user_id):
         user = User.objects.get(pk=user_id)
 
-        Petitions = Petition.objects.all().filter(organiser_id=user)
+        petitions = Petition.objects.all().filter(organiser_id=user)
 
-        serializer = self.serializer_class(instance=Petitions, many=True)
+        serializer = self.serializer_class(instance=petitions, many=True)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
@@ -116,9 +116,9 @@ class UserPetitionDetailView(generics.GenericAPIView):
     def get(self, request, user_id, Petition_id):
         user = User.objects.get(pk=user_id)
 
-        Petition = Petition.objects.all().filter(
+        petition = Petition.objects.all().filter(
             organiser_id=user).filter(pk=Petition_id)
 
-        serializer = self.serializer_class(instance=Petition)
+        serializer = self.serializer_class(instance=petition)
 
         return Response(data=serializer.data, status=status.HTTP_200_OK)
