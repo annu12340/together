@@ -13,7 +13,7 @@ header:before {
    float: right;
 }
 .back {
-   background: rgba(90, 89, 89, 0.149);
+   background: #5a595926;
    padding: 1em;
    backdrop-filter: blur(10px);
    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.351);
@@ -24,10 +24,10 @@ header:before {
 
    float: left;
    padding: 0;
-  font-family: "Open Sans", sans-serif;
-
+   font-family: "Open Sans", sans-serif;
+   background: #5a595926;
    line-height: 1.5;
-   font-size: 16px;
+
    color: rgb(201, 194, 194);
 }
 
@@ -203,8 +203,8 @@ header:before {
 
 .btn:hover {
    box-shadow: none;
-   background:  rgb(170, 56, 159);
-   border-color:  rgb(170, 56, 159);
+   background: rgb(170, 56, 159);
+   border-color: rgb(170, 56, 159);
 }
 
 .right {

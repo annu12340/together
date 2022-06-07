@@ -28,12 +28,13 @@ function OTP() {
       <>
          <div className='card login-box'>
             <form className='form-shadow' action='' method='post'>
-               <h3 className='bg text text-dark  rounded'>OTP Verification</h3>
+               <h3 className='bg text text-dark heading rounded'>OTP Verification</h3>
                <br />
+
                <h4 className=''>
-                  Enter OTP <span className='mob'>XXXX</span>
+                  Enter OTP <span className='mob'>XXXXXX</span>
                </h4>
-               <br />
+
                <input className=' black input-group-text ' max='6' type='otp' name='otp' onChange={inputsHandler} placeholder='otp' value={inputField.otp} />
                <br />
                <h5>
@@ -45,6 +46,8 @@ function OTP() {
                      Submit
                   </button>
                </Link>
+               <br />
+               <br />
             </form>
          </div>
 

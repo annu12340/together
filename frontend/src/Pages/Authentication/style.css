@@ -10,11 +10,12 @@
   box-sizing: border-box;  
 } */
 .main {
-   width: 100%;
+   width: 95%;
+   margin-left: 5%;
    display: flex;
    justify-content: center;
    align-items: center;
-   min-height: 100vh;
+   min-height: 120vh;
    background: #131419;
 }
 .form {

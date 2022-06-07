@@ -2,7 +2,10 @@
    color: rgb(180, 44, 44);
 }
 .login-box {
-   background: linear-gradient(0deg, rgb(173, 140, 170) 60%, rgb(99, 20, 132) 40%);
+   /* background: linear-gradient(0deg, rgb(173, 140, 170) 60%, rgb(99, 20, 132) 40%); */
+   /* background: linear-gradient(0deg, rgb(180, 170, 180) 60%, rgb(51, 7, 70) 40%); */
+   background: linear-gradient(0deg, rgb(189, 148, 186) 60%, rgb(70, 11, 96) 40%);
+
    max-width: 900px;
    min-width: 300px;
    margin: auto;

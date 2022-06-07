@@ -10,7 +10,7 @@ const Details = () => {
    let [detailedview, setdetailedview] = useState([]);
    const [value, setValue] = React.useState("");
    const actArray = [];
-   for (let i = 0; i < 4; i++) {
+   for (let i = 0; i < 5; i++) {
       if (i === value) {
          actArray.push("btn active");
       } else {
@@ -106,11 +106,26 @@ const Details = () => {
                               onClick={() => {
                                  setValue(
                                     <>
-                                       <Payment /> <img className='ml-8 pl-60' src={data.qrcode_url} alt='' />
+                                       <Payment />
                                     </>
                                  );
                               }}>
-                              &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; Payment &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                              &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; ETH Payment &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+                           </button>
+                        </li>
+                        <li style={{ float: "left" }}>
+                           <button
+                              type='button'
+                              className={actArray[4]}
+                              onClick={() => {
+                                 setValue(
+                                    <>
+                                       {" "}
+                                       <img className='ml-8 pl-60' src={data.qrcode_url} alt='' /> <h1 className='text-xl font-semibold text-gray-100 text-center'>Send ETH payment</h1>
+                                    </>
+                                 );
+                              }}>
+                              &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; UPI Payment &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
                            </button>
                         </li>
                      </ul>

@@ -44,44 +44,8 @@ class CampaignForm extends Component {
       set_access_token();
    }
 
-   /*// Use the submitted data to set the state
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  }*/
-
    handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
-   // Trigger an alert on form submission
-   /*handleSubmit = async event => {
-    event.preventDefault();
-    const { campaignname, description,status, startdate,enddate,contactinfo,targetamount,type } = this.state;
-    /*alert(`Your registration detail: \n 
-      Campaign Name: ${campaignname} \n 
-      Discription: ${discription} \n
-      Type :${type}\n
-      status: ${status}\n
-      Start Date: ${startdate}\n
-      End Date :${enddate}\n
-      Contact Info: ${contactinfo}\n
-      Target Amount: ${targetamount}`);
-    
-      let body = {
-        name: campaignname,
-        description: description,
-        type: type,
-        status: status,
-        start_date: startdate,
-        end_date: enddate,
-        target_amount: targetamount,
-        contact_info: contactinfo,
-     };
-      let response = await axios.post("http://127.0.0.1:8000/campaigns/", body, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` }  });
-
-      console.log("data", response.data);
-  };*/
    handleSubmit(event) {
       axios
          .post(
@@ -147,7 +111,7 @@ class CampaignForm extends Component {
       // If the current step is not 1, then render the "previous" button
       if (currentStep !== 1) {
          return (
-            <Button color='secondary float-left text-white' onClick={this._prev}>
+            <Button color='ml-50 secondary float-left text-white' onClick={this._prev}>
                Previous
             </Button>
          );
@@ -188,34 +152,30 @@ class CampaignForm extends Component {
 
    render() {
       return (
-         <div className='main'>
+         <div className=' '>
             <Container>
                <Row>
-                  <Col>
-                     <br />
-
-                     <div className=' wh pt-28 pl-20'>
-                        <Form onSubmit={this.handleSubmit}>
-                           <Card>
-                              <CardHeader className='header heading'>Create campaign</CardHeader>
-                              <CardBody className='  pl-16 pr-16 pb-16'>
-                                 <CardTitle>
-                                    <MultiStepProgressBar currentStep={this.state.currentStep} />
-                                 </CardTitle>
-                                 <CardText />
-                                 <Step1 name='Campaign' currentStep={this.state.currentStep} handleChange={this.handleChange} campaignname={this.state.campaignname} discription={this.state.discription} type={this.state.type} images={this.state.images} />
-                                 <Step2 name='Campaign' target='amount' currentStep={this.state.currentStep} handleChange={this.handleChange} startdate={this.state.startdate} enddate={this.state.enddate} contactinfo={this.state.contactinfo} targetamount={this.state.targetamount} />
-                                 <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} upi={this.state.upi} verification_documents={this.state.verification_documents} />
-                              </CardBody>
-                              <CardFooter className='footerButton'>
-                                 {this.previousButton}
-                                 {this.nextButton}
-                                 {this.submitButton}
-                              </CardFooter>
-                           </Card>
-                        </Form>
-                     </div>
-                  </Col>
+                  <div className=' wh pt-28 pl-20'>
+                     <Form onSubmit={this.handleSubmit}>
+                        <Card>
+                           <CardHeader className='header heading'>Create campaign</CardHeader>
+                           <CardBody className='  pl-20 pr-20 pb-46'>
+                              <CardTitle>
+                                 <MultiStepProgressBar currentStep={this.state.currentStep} />
+                              </CardTitle>
+                              <CardText />
+                              <Step1 name='Campaign' currentStep={this.state.currentStep} handleChange={this.handleChange} campaignname={this.state.campaignname} discription={this.state.discription} type={this.state.type} images={this.state.images} />
+                              <Step2 name='Campaign' target='amount' currentStep={this.state.currentStep} handleChange={this.handleChange} startdate={this.state.startdate} enddate={this.state.enddate} contactinfo={this.state.contactinfo} targetamount={this.state.targetamount} />
+                              <Step3 currentStep={this.state.currentStep} handleChange={this.handleChange} upi={this.state.upi} verification_documents={this.state.verification_documents} />
+                           </CardBody>
+                           <CardFooter className='footerButton'>
+                              {this.previousButton}
+                              {this.nextButton}
+                              {this.submitButton}
+                           </CardFooter>
+                        </Card>
+                     </Form>
+                  </div>
                </Row>
             </Container>
          </div>

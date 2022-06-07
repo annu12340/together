@@ -10,7 +10,7 @@ import Step3 from "./Step3";
 
 import MultiStepProgressBar from "./MultiStepProgressBar";
 
-class CampaignForm extends Component {
+class PetitionForm extends Component {
    constructor(props) {
       super(props);
 
@@ -155,4 +155,4 @@ class CampaignForm extends Component {
    }
 }
 
-export default CampaignForm;
+export default PetitionForm;

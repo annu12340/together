@@ -24,12 +24,12 @@ function App() {
             <Routes>
                <Route path='/' element={<Home />}>
                   <Route path='/dashboard' element={<Dashboard />}></Route>
-                  <Route path='/campaignhistory' element={<HistoryTab/>}></Route>
+                  <Route path='/campaignhistory' element={<HistoryTab />}></Route>
                   <Route path='/petitionhistory' element={<Petitionhistory />}></Route>
                   <Route path='/campaign/:id' element={<Details />}></Route>
                   <Route path='/petition/:id' element={<PetitionDetails />}></Route>
-                  <Route path='/campaignregistration' element={<CapmpaignForm />}></Route>
-                  <Route path='/petitionregistration' element={<PetitonForm />}></Route>
+                  <Route path='/addcampaign' element={<CapmpaignForm />}></Route>
+                  <Route path='/addpetition' element={<PetitonForm />}></Route>
                </Route>
                <Route path='/login' element={<Login />}></Route>
                <Route path='/logout' element={<Logout />}></Route>

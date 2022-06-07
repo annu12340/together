@@ -40,7 +40,7 @@ export default class Login extends Component {
                <div className='input'>
                   <div className='inputBox' controlId='formBasicEmail'>
                      <label>Username</label>
-                     <input type='text' name='email' placeholder='your_name@domain.com' value={this.state.email} onChange={this.onChange} />
+                     <input type='text' name='email' placeholder='Enter username' value={this.state.email} onChange={this.onChange} />
                   </div>
                   <div className='inputBox' controlId='formBasicPassword'>
                      <label>Password</label>
