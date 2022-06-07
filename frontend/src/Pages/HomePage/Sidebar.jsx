@@ -60,7 +60,7 @@ function SidebarLeft() {
    return (
       <div className='hidden lg:flex h-screen flex-col justify-between w-48 fixed left-0 top-0 bottom-0 pt-24'>
          <ul className='space-y-8'>
-            {["Dashboard", "Add campaign ", "Add petition", "Campaign history", "Petition history"].map((key, index) => (
+            {["Dashboard", "Add campaign ", "Add petition", "History"].map((key, index) => (
                <SidebarItem key={key} text={key} index={index} />
             ))}
          </ul>

@@ -34,7 +34,7 @@ export default function Signature({}) {
       <form className='m-4' style={{ boxShadow: "-5px -5px 10px rgba(255,255,255,0.05),5px 5px 10px rgba(0,0,0,0.5)" }} onSubmit={handleSubmit}>
          <div className='credit-card w-full  mx-auto rounded-xl bg-grey'>
             <main className='mt-4 p-4'>
-               <h1 className='text-xl font-semibold text-gray-100 text-center'>Send ETH payment</h1>
+               <h1 className='text-xl font-semibold text-gray-100 text-center'>Add a signature</h1>
                <div className=''>
                   <div className='my-3'>
                      <input type='text' name='addr' className='input input-bordered block w-full focus:ring focus:outline-none' placeholder='Recipient Address' />

@@ -121,7 +121,7 @@ const Details = () => {
                                  setValue(
                                     <>
                                        {" "}
-                                       <img className='ml-8 pl-60' src={data.qrcode_url} alt='' /> <h1 className='text-xl font-semibold text-gray-100 text-center'>Send ETH payment</h1>
+                                       <img className='ml-8 pl-60' src={data.qrcode_url} alt='' /> <h1 className='text-xl font-semibold text-gray-100 text-center'>Make UPI Payment</h1>
                                     </>
                                  );
                               }}>

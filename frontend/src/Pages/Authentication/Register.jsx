@@ -53,8 +53,13 @@ export default class Register extends Component {
                      </div>
 
                      <div className='inputBox' controlId='formBasicEmail'>
-                        <label>Email</label>
-                        <input type='emaiil' placeholder='Enter email' name='email' value={this.state.email} onChange={this.onChange} />
+                        <label>Username</label>
+                        <input type='emaiil' placeholder='Enter username' name='email' value={this.state.email} onChange={this.onChange} />
+                     </div>
+
+                     <div className='inputBox' controlId='formBasicEmail'>
+                        <label>Phone number</label>
+                        <input type='text' placeholder='Enter phone number' name='phone' />
                      </div>
 
                      <div className='inputBox' controlId='formBasicPassword'>

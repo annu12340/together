@@ -62,8 +62,11 @@ const PetitionDetails = () => {
                               onClick={() => {
                                  setValue(
                                     <p className='text-center text-[#daded9] p-16 text-1xl' style={{ overflowWrap: "break-word" }}>
-                                       The issue with the current crowdfunding technique is that third party media don’t give the assurance of the money investor contributed for the project and investors don’t have control over the cash they contribute. The traditional crowdfunding platforms do not
-                                       support all types of crowdfunding campaigns and have high platform charges while also having a high risk of fraud. We plan to build a decentralized platform that supports all types of crowdfunding on a blockchain network.
+                                       Climate Change is really a thing now with Delhi experiencing such drastic changes in the weather conditions over the past few years. Last year Delhi topped the list of most polluted cities in the world. Futhermore, every year we see Delhi breaking its own
+                                       record in heat wave as a result of rising temperature. My take lets start by improving what we have. Restoring our neighborhood parks would not only provide a place for people to relax but also fight against global warming and air pollution, which has become
+                                       another predator for human beings. Every day atleast 8 people die due to air pollution and last year we lost 1,600 people to rising temperatures. In an article by MIT, researchers showcased that - "If climate change continues at its current pace, deadly
+                                       heatwaves beginning in the next few decades will strike parts of India, Pakistan and Bangladesh." There are currently 14,000 neighborhood parks in Delhi and yet most of them have dried out due to lack of maintenance and poor infrastructure. This maybe a small
+                                       motion in the fast changing climate conditions but as it is said 'To move mountains we have to start by moving small stones'.{" "}
                                     </p>
                                  );
                               }}>

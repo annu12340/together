@@ -66,11 +66,11 @@ const HistoryTab = () => {
                   <ul className='dashboard-timeline'>
                      <li className='dashboard-timeline-item'>
                         <div className='dashboard-timeline-info'>
-                           <span>2nd September 2021</span>
+                           <span>2nd September 2008</span>
                         </div>
                         <div className='dashboard-timeline-marker'></div>
                         <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>IBeTo Launch</h3>
+                           <h3 className='dashboard-timeline-title'>Girls Hockey Bill of Rights</h3>
                         </div>
                      </li>
 
@@ -80,17 +80,17 @@ const HistoryTab = () => {
                         </div>
                         <div className='dashboard-timeline-marker'></div>
                         <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>Registration Closes</h3>
+                           <h3 className='dashboard-timeline-title'>Community Support for the Beaver Falls Children's Museum Projec</h3>
                         </div>
                      </li>
 
                      <li className='dashboard-timeline-item'>
                         <div className='dashboard-timeline-info'>
-                           <span>23rd September 2021</span>
+                           <span>23rd March 2021</span>
                         </div>
                         <div className='dashboard-timeline-marker'></div>
                         <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>Idea submission</h3>
+                           <h3 className='dashboard-timeline-title'>Help Devika overcome cancer</h3>
                         </div>
                      </li>
 
@@ -100,25 +100,17 @@ const HistoryTab = () => {
                         </div>
                         <div className='dashboard-timeline-marker'></div>
                         <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>Announcement of shortlisted teams</h3>
+                           <h3 className='dashboard-timeline-title'>Build a new decentralized social media platform</h3>
                         </div>
                      </li>
+
                      <li className='dashboard-timeline-item'>
                         <div className='dashboard-timeline-info'>
-                           <span>7th October 2021</span>
+                           <span>14th October 2022</span>
                         </div>
                         <div className='dashboard-timeline-marker'></div>
                         <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>Round 1: Detailed Abstract Submission</h3>
-                        </div>
-                     </li>
-                     <li className='dashboard-timeline-item'>
-                        <div className='dashboard-timeline-info'>
-                           <span>14th October 2021</span>
-                        </div>
-                        <div className='dashboard-timeline-marker'></div>
-                        <div className='dashboard-timeline-content'>
-                           <h3 className='dashboard-timeline-title'>Announcement of shortlisted teams</h3>
+                           <h3 className='dashboard-timeline-title'>Buy me a coeffe for Shalu</h3>
                         </div>
                      </li>
                   </ul>
