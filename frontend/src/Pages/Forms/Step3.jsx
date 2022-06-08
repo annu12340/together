@@ -14,6 +14,8 @@ const Step3 = (props) => {
 
             <Label className=' textFeild white float-left pt-12'>Upload Documents</Label>
             <Input type='text' name='verification_documents' placeholder='Paste your document link here' className='outline-none py-2 white pr-4 block w-full textstyle' value={props.verification_documents} onChange={props.handleChange} />
+            <br />
+            <br />
          </FormGroup>
       </>
    );
