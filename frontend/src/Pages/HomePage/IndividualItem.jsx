@@ -50,10 +50,10 @@ function IndividualItem() {
             {campaign.map((data) => (
                <>
                   {" "}
-                  <li className='w-full lg:w-1/2 xl:w-1/3  p-3 ' key={data.id} href='http://localhost:3000/item/1/'>
+                  <li className='w-full lg:w-1/2 xl:w-1/3  p-3 ' key={data.id}>
                      <Link to={`/campaign/${data.id}`}>
                         <div className='w-full h-64 bg-center bg-cover relative' style={{ backgroundImage: `url(${data.images})`, borderRadius: "4%" }}>
-                           <div className='absolute left-1/2 -translate-x-1/2 bottom-2  w-5/6 bg-white rounded-md flex items-center bg-opacity-30 backdrop-blur-md'>
+                           <div className='absolute left-1/2 -translate-x-1/2 bottom-1  w-5/6 bg-white rounded-md flex items-center bg-opacity-30 backdrop-blur-md' style={{ bottom: "-5%", zIndex: 100 }}>
                               <div className='w-1/2 p-3'>
                                  <h3 className='font-semibold'>Target Amount</h3>
                                  <div className=''>{data.target_amount} ETH</div>
@@ -64,17 +64,22 @@ function IndividualItem() {
                               </div>
                            </div>
                         </div>
-                        <div className='individualcampaign'>
+                        <div className='individualcampaign '>
                            <span>
                               {" "}
-                              <h3 className='font-semibold text-center  text-lg px-3 mt-2 text-3xl' style={{ color: "white" }}>
+                              <h2 className='font-semibold text-center  text-lg px-3 mt-2 text-3xl' style={{ color: "white", fontSize: "22px" }}>
                                  {data.name} <span style={{ float: "right" }}> {data.is_verified && <img src='https://cdn-icons-png.flaticon.com/512/6269/6269646.png' height='20' width='20' />}</span>
-                              </h3>
+                              </h2>
                            </span>
                            <div className='flex items-center px-3 mt-2'>
-                              <img src='https://assets.codepen.io/3685267/nft-dashboard-pro-1.jpg' className='w-10 h-10 rounded-full' alt='item-owner' />
-                              <span className=' ml-2 text-zinc-400'>{data.type}</span>
-                              <span className=' ml-2 text-zinc-100'>{data.likes} likes</span>
+                              <span className=' ml-2 text-zinc-400'>#{data.type}</span>
+                              <span className='flex items-center  ml-10 '>
+                                 <span>
+                                    {" "}
+                                    <img src='https://user-images.githubusercontent.com/43414928/175196130-2a4500a9-2231-4fb4-a406-a44a29ee4598.png' className='w-4 h-4' alt='item-owner' />
+                                 </span>
+                                 <span className='text-zinc-100 '> {data.likes} likes</span>
+                              </span>
                            </div>
                            <br />
                            <div class='mb-1 text-base text-white'>

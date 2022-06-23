@@ -11,6 +11,7 @@ body {
 .individualcampaign {
    background: rgba(62, 62, 62, 0.149);
    padding: 1em;
+   height: 210px;
    backdrop-filter: blur(10px);
    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.351);
 }
