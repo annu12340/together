@@ -15,7 +15,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background: rgb(255, 132, 8);
+   min-height: 100vh;
 }
 .form {
    position: absolute;
