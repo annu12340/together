@@ -41,9 +41,11 @@ class CampaignView(generics.GenericAPIView):
         if serializer.is_valid():
             url = "upi://pay?pa="+data['upi_id']+"&pn=" + \
                 request.user.username+"&cu=INR&tn=Together"
-            img_url = main(url, "asset_name", "Creating a QR code")
+            img_url, assetid = main(url, "asset_"+request.data['name'],
+                                    "Creating a QR code")
+            
             serializer.save(organiser_id=request.user.id,
-                            qrcode_url=img_url, is_verified=validity)
+                            qrcode_url=img_url, asset_id=assetid, is_verified=validity)
             print(f"\n111 The post data is {serializer.data}")
             return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 
@@ -55,14 +57,11 @@ class CampaignIdView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, campaign_id):
-
         campaign = get_object_or_404(Campaign, pk=campaign_id)
-        scanid = request.GET.get('scanId', '')
-        print("scanid", scanid)
-        scaninfo_main(scanid)
-
+        # scanid = request.GET.get('scanId', '')
+        # print("scanid", scanid)
+        # scaninfo_main(scanid)
         serializer = self.serializer_class(instance=campaign)
-
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, campaign_id):
@@ -153,6 +152,21 @@ class FilterView(generics.GenericAPIView):
     def get(self, request, type):
 
         campaign = Campaign.objects.all().filter(type=type)
+
+        serializer = self.serializer_class(instance=campaign)
+
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+
+
+class CampaignAnalysis(generics.GenericAPIView):
+    serializer_class = serializers.CampaignSerializer
+
+    def get(self, request, campaign_id):
+
+        campaign = get_object_or_404(Campaign, pk=campaign_id)
+        print("campaigncampaigncampaigncampaigncampaign", campaign)
+
+        scaninfo_main(campaign.asset_id)
 
         serializer = self.serializer_class(instance=campaign)
 
