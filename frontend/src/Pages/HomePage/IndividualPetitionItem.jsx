@@ -21,7 +21,7 @@ const SidebarRight = () => {
    };
    return (
       <>
-         <div className='p-3 w-96 shrink-0 md:sticky md:top-16 shrink-0 h-full'>
+         <div className='ml-2 p-3 w-96 shrink-0 md:sticky md:top-16 shrink-0 h-full'>
             <h2 className='text-2xl text-white font-semibold'>Petitions</h2>
             <ul className='mt-3 space-y-3'>
                {petition.map((data) => (
@@ -32,7 +32,7 @@ const SidebarRight = () => {
 
                         <p className='text-sm pb-4 text-zinc-400'>Needs {data.target_signature_counter} signs</p>
                         <Link to={`/petition/${data.id}`}>
-                           <a className=' btn  w-24 bg-gradient-to-tr  to-violet-600 hover:bg-violet-400 text-white font-bold py-2 px-4 border-b-4 hover:border-violet-500 rounded'>Sign</a>
+                           <a className=' btn  w-18 bg-gradient-to-tr from-fuchsia-600 to-violet-600 text-white font-bold py-2 px-2 rounded'>Sign</a>
                         </Link>
                      </div>
                   </li>

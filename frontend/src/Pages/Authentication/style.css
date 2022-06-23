@@ -15,8 +15,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   min-height: 120vh;
-   background: #131419;
+   background: rgb(255, 132, 8);
 }
 .form {
    position: absolute;

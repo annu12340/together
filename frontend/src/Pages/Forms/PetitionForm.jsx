@@ -129,8 +129,8 @@ class PetitionForm extends Component {
                      <div className=' wh pt-28 pl-20'>
                         <Form onSubmit={this.handleSubmit}>
                            <Card>
-                              <CardHeader className='header heading'>Create your Petition</CardHeader>
-                              <CardBody className='  pl-16 pr-16 pb-16'>
+                              <CardHeader className='header heading text-center'>Create your Petition</CardHeader>
+                              <CardBody className=' pl-20 pr-20 pb-46'>
                                  <CardTitle>
                                     <MultiStepProgressBar currentStep={this.state.currentStep} />
                                  </CardTitle>
@@ -144,6 +144,7 @@ class PetitionForm extends Component {
                                  {this.nextButton}
                                  {this.submitButton}
                               </CardFooter>
+                              <br /> <br />
                            </Card>
                         </Form>
                      </div>

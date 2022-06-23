@@ -152,13 +152,13 @@ class CampaignForm extends Component {
 
    render() {
       return (
-         <div className=' '>
+         <div className='main'>
             <Container>
                <Row>
                   <div className=' wh pt-28 pl-20'>
                      <Form onSubmit={this.handleSubmit}>
                         <Card>
-                           <CardHeader className='header heading'>Create campaign</CardHeader>
+                           <CardHeader className='header heading text-center'>Create campaign</CardHeader>
                            <CardBody className='  pl-20 pr-20 pb-46'>
                               <CardTitle>
                                  <MultiStepProgressBar currentStep={this.state.currentStep} />
@@ -173,6 +173,7 @@ class CampaignForm extends Component {
                               {this.nextButton}
                               {this.submitButton}
                            </CardFooter>
+                           <br /> <br />
                         </Card>
                      </Form>
                   </div>

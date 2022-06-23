@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import ShareButtons from "../ShareButton/ShareButtons";
 import axios from "axios";
 import { set_access_token } from "./../utils/accessToken";
-
+import "./details.css";
 const Details = () => {
    const params = useParams();
    let [detailedview, setdetailedview] = useState([]);
@@ -31,22 +31,15 @@ const Details = () => {
       }
    };
 
-   let updateLike = async () => {
-      let response = await axios.get(`http://127.0.0.1:8000/campaigns/like/${params.id}`, { headers: { Authorization: `Bearer ${localStorage.getItem("access_token")}` } });
-
-      if (response.status === 200) {
-         console.log("updateLike", response);
-      }
-   };
    return (
       <>
          <div>
             {" "}
             {detailedview.map((data) => (
-               <div style={{ width: "95%", padding: "5%" }}>
+               <div style={{ width: "100%", padding: "5%" }}>
                   <div className='h-96 bg-cover flex flex-wrap' style={{ backgroundImage: `url(${data.images})` }}>
                      <br />
-                     <h className='heading font-bold text-4xl pt-3 pl-3 text-white  text-center'>
+                     <h className='detailedview_heading font-bold text-4xl pt-3 pl-5 text-white  text-center'>
                         {data.name}{" "}
                         <span className='mt-2' style={{ float: "right" }}>
                            {" "}
@@ -58,22 +51,17 @@ const Details = () => {
                      <span>
                         <ShareButtons title='Check out this campaign and do make a contribution if you can' url={`http://localhost:3000/campaign/${data.id}`} />
                      </span>
-                     {/* <span>
-                        <button className='bg-indigo-500 p-3' onClick={updateLike}>
-                           Like
-                        </button>
-                     </span> */}
                   </div>
 
                   <div className='App'>
-                     <ul style={{ listStyle: "none", paddingTop: "2rem" }}>
+                     <ul style={{ listStyle: "none", paddingTop: "2rem", paddingLeft: "1rem" }}>
                         <li style={{ float: "left" }}>
                            <button
                               type='button'
                               className={actArray[0]}
                               onClick={() => {
                                  setValue(
-                                    <p className=' text-[#daded9] p-10 text-1xl' style={{ overflowWrap: "break-word" }}>
+                                    <p className=' text-[#daded9] p-10 text-1xl' style={{ overflowWrap: "break-word", fontSize: "20px", width: "90%" }}>
                                        {data.description}
                                     </p>
                                  );
@@ -88,7 +76,7 @@ const Details = () => {
                               onClick={() => {
                                  setValue(
                                     <div className='ml-8 pl-36 pt-10 pb-10'>
-                                       <object data={data.verification_documents} type='application/pdf' width='670' height='578'>
+                                       <object data={data.verification_documents} type='application/pdf' width='770' height='578'>
                                           <ifram src={data.verification_documents} width='670' height='578'>
                                              <p>This browser does not support PDF!</p>
                                           </ifram>
@@ -121,8 +109,8 @@ const Details = () => {
                                  setValue(
                                     <>
                                        {" "}
-                                       <img className='ml-8 pl-60' src={data.qrcode_url} alt='' />
-                                       <h1 className='text-xl font-semibold text-gray-100 text-center'>Scan the QR code to make the UPI payment</h1>
+                                       <h1 className='pt-8 text-xl font-semibold text-gray-100 text-center'>Scan the QR code to make payment</h1>
+                                       <img className='ml-40 pl-60 pt-5 pb-5' src={data.qrcode_url} alt='' />
                                     </>
                                  );
                               }}>

@@ -24,19 +24,25 @@ const HistoryTab = () => {
    return (
       <>
          <div className='flex flex-col md:flex-row'>
-            <div className='histo'>
+            <div className='histo pl-5'>
+               <div className=''>
+                  <h2 className='text-center dashboard-heading text-white' style={{ fontSize: "35px" }}>
+                     <b> My campaigns</b>
+                  </h2>
+               </div>
                {campaign.map((data) => (
                   <div className='p-5'>
                      <Link to={`/campaign/${data.id}`}>
                         <div className=' w-full lg:max-w-full lg:flex'>
                            <div className='h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden' style={{ backgroundImage: `url(${data.images})` }} title='Mountain'></div>
-                           <div style={{ width: "25vw" }} className=' back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal '>
+                           <div style={{ width: "30vw" }} className=' back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal '>
                               <div className='mb-8'>
                                  <div className='text-white font-bold text-xl mb-2'>{data.name}</div>
-                                 <p className='text-white text-base'>
-                                    {" "}
+                                 <p className='text-zinc-300 text-base'>
                                     {`${data.description.substring(0, 80)}...`}
-                                    <a href='#'>Read more</a>
+                                    <a href='#' className=' text-zinc-500'>
+                                       Read more
+                                    </a>
                                  </p>
                               </div>
                            </div>
@@ -47,7 +53,7 @@ const HistoryTab = () => {
                                        <svg className='fill-white' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='20' height='20' viewBox='0 0 24 24'>
                                           <path d='M 10 2 L 9 3 L 3 3 L 3 5 L 21 5 L 21 3 L 15 3 L 14 2 L 10 2 z M 4.3652344 7 L 5.8925781 20.263672 C 6.0245781 21.253672 6.877 22 7.875 22 L 16.123047 22 C 17.121047 22 17.974422 21.254859 18.107422 20.255859 L 19.634766 7 L 4.3652344 7 z'></path>
                                        </svg>
-                                       <span className='text-white'>Delete</span>
+                                       {/* <span className='text-white'>Delete</span> */}
                                     </button>
                                  </div>
                               </div>
@@ -57,12 +63,14 @@ const HistoryTab = () => {
                   </div>
                ))}
             </div>
-            <div className='histo2'>
-               <div className='white-bk dashboard-timeline-row'>
+            <div className='histo2 ml-5'>
+               <div className='dark-bk dashboard-timeline-row'>
                   <div className=''>
                      <h4 className=' dashboard-heading text-white'>Contributed campaigns</h4>
                   </div>
                   <hr />
+                  <br />
+                  <br />
                   <ul className='dashboard-timeline'>
                      <li className='dashboard-timeline-item'>
                         <div className='dashboard-timeline-info'>

@@ -21,13 +21,10 @@ header:before {
 
 .histo {
    margin-top: 1rem;
-
    float: left;
    padding: 0;
    font-family: "Open Sans", sans-serif;
-   background: #5a595926;
    line-height: 1.5;
-
    color: rgb(201, 194, 194);
 }
 

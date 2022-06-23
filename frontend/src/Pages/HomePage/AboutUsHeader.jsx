@@ -15,7 +15,7 @@ function AboutUsHeader() {
                <h2 className='font-bold text-3md max-w-sm' style={{ color: "#131517" }}>
                   No one has ever become poor by giving
                </h2>
-               <button className='py-2 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-44 mt-3'>About Us</button>
+               {/* <button className='py-2 bg-gradient-to-tr from-fuchsia-600 to-violet-600 rounded-md w-44 mt-3'>About Us</button> */}
             </div>
          </div>
       </div>
