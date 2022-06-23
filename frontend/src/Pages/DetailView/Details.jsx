@@ -5,6 +5,7 @@ import ShareButtons from "../ShareButton/ShareButtons";
 import axios from "axios";
 import { set_access_token } from "./../utils/accessToken";
 import "./details.css";
+
 const Details = () => {
    const params = useParams();
    let [detailedview, setdetailedview] = useState([]);

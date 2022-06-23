@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./pages/HomePage/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Details from "./pages/DetailView/Details";
+import Analysis from "./pages/DetailView/Analysis";
 import CapmpaignForm from "./pages/Forms/CampaignForm";
 import PetitonForm from "./pages/Forms/PetitionForm";
 import PetitionDetails from "./pages/DetailView/PetitionDetails";
@@ -27,6 +28,7 @@ function App() {
                   <Route path='/campaignhistory' element={<HistoryTab />}></Route>
                   <Route path='/petitionhistory' element={<Petitionhistory />}></Route>
                   <Route path='/campaign/:id' element={<Details />}></Route>
+                  <Route path='/analysis' element={<Analysis />}></Route>
                   <Route path='/petition/:id' element={<PetitionDetails />}></Route>
                   <Route path='/addcampaign' element={<CapmpaignForm />}></Route>
                   <Route path='/addpetition' element={<PetitonForm />}></Route>

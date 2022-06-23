@@ -48,8 +48,17 @@ const HistoryTab = () => {
                            </div>
                            <div className='back border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-900  rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal'>
                               <div className='mb-8'>
-                                 <div className='flex items-center space-x p-4'>
-                                    <button className='flex space-x-2 items-center px-3 py-2 bg-rose-500 hover:bg-rose-800 rounded-md drop-shadow-md'>
+                                 <div className=' items-center space-x p-4'>
+                                    <Link to={"/analysis"}>
+                                       <button className=' space-x-2 items-center px-2.5 py-2 bg-blue-500 hover:bg-blue-800 rounded-md drop-shadow-md'>
+                                          {/* <span className='text-white'>Delete</span> */}
+                                          <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                                             <path d='M15 12c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3zm9-.449s-4.252 8.449-11.985 8.449c-7.18 0-12.015-8.449-12.015-8.449s4.446-7.551 12.015-7.551c7.694 0 11.985 7.551 11.985 7.551zm-7 .449c0-2.757-2.243-5-5-5s-5 2.243-5 5 2.243 5 5 5 5-2.243 5-5z' />
+                                          </svg>
+                                       </button>
+                                    </Link>
+
+                                    <button className='mt-8 space-x-2 items-center px-3 py-2 bg-rose-500 hover:bg-rose-800 rounded-md drop-shadow-md'>
                                        <svg className='fill-white' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='20' height='20' viewBox='0 0 24 24'>
                                           <path d='M 10 2 L 9 3 L 3 3 L 3 5 L 21 5 L 21 3 L 15 3 L 14 2 L 10 2 z M 4.3652344 7 L 5.8925781 20.263672 C 6.0245781 21.253672 6.877 22 7.875 22 L 16.123047 22 C 17.121047 22 17.974422 21.254859 18.107422 20.255859 L 19.634766 7 L 4.3652344 7 z'></path>
                                        </svg>
