@@ -41,11 +41,11 @@ class CampaignView(generics.GenericAPIView):
         if serializer.is_valid():
             url = "upi://pay?pa="+data['upi_id']+"&pn=" + \
                 request.user.username+"&cu=INR&tn=Together"
-            img_url, assetid = main(url, "asset_"+request.data['name'],
-                                    "Creating a QR code")
+            # img_url, assetid = main(url, "asset_"+request.data['name'],
+            #                         "Creating a QR code")
             
             serializer.save(organiser_id=request.user.id,
-                            qrcode_url=img_url, asset_id=assetid, is_verified=validity)
+                            qrcode_url="img_url", asset_id="assetid", is_verified=validity)
             print(f"\n111 The post data is {serializer.data}")
             return Response(data=serializer.data, status=status.HTTP_201_CREATED)
 

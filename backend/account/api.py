@@ -39,7 +39,7 @@ def send_otp(request):
         client = Client(account_sid, auth_token)
         client.messages.create(
             body='\n\n\n  Welcome to Together. \n Your otp is '+random_chars,
-            from_='+19785431787', to='+919188058865'
+            from_='+17622093494', to='+919188058865'
         )
         return Response(data=random_chars, status=status.HTTP_200_OK)
 
